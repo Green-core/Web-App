@@ -5,6 +5,8 @@ import Menu from './Menu/Menu'
 import Footer from './Footer/Footer';
 import Content from './Content/Content'
 
+
+
 export default class Template extends React.Component{
 
     // constructor(){}
