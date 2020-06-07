@@ -1,10 +1,13 @@
 import React from 'react'
+import Viewusers from '../Views/Viewusers'
 
 function Content(){
     return (
-        <div>
-            H!
-        </div>
+        <Viewusers />
+        
+        // <div>
+        //     H!
+        // </div>
     )
 }
 

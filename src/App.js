@@ -27,7 +27,7 @@ import Viewusers from './Template/Views/Viewusers'
 
 function App() {
   return (
-    // <Template />
+    <Template />
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -44,9 +44,9 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <div className= "container">
-      <Viewusers />
-    </div>
+    // <div className= "container">
+    //   <Viewusers />
+    // </div>
   )
 }
 
