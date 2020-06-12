@@ -4,6 +4,8 @@ import Header from './Header/Header'
 import Menu from './Menu/Menu'
 import Footer from './Footer/Footer';
 import Content from './Content/Content'
+import Right1 from './Right1/Right1'
+import Right2 from './Right2/Right2'
 
 
 
@@ -18,8 +20,8 @@ export default class Template extends React.Component{
                     <div className="item1"><Header /></div>
                     <div className="item2"><Menu /></div>
                     <div className="item3"><Content /></div>  
-                    <div className="item4">Right 1</div>
-                    <div className="item5">Right 2</div>
+                    <div className="item4"><Right1 /></div>
+                    <div className="item5"><Right2 /></div>
                     <div className="item6"><Footer /></div>
                 </div>
             </div>
