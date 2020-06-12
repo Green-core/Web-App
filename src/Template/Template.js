@@ -7,6 +7,8 @@ import Content from './Content/Content'
 import Right1 from './Right1/Right1'
 import Right2 from './Right2/Right2'
 
+
+
 export default class Template extends React.Component{
 
     // constructor(){}

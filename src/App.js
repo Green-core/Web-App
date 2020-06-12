@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import Template from './Template/Template'
 import './App.css';
+import Viewusers from './Template/Views/Viewusers'
+
+// class app extends Component{
+//   render(){
+//     return(
+//       <div className= "App">
+//             <div className= "App-header">
+//               <img src={logo} className= "App-logo" alt="app"></img>
+//               <h1>Welcome to GreenCore</h1>
+//               </div>
+//               </div>
+//     );
+
+    
+
+
+//   }
+
+
+
+// }
+
 
 function App() {
   return (
@@ -22,7 +44,10 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-  );
+    // <div className= "container">
+    //   <Viewusers />
+    // </div>
+  )
 }
 
 export default App;
