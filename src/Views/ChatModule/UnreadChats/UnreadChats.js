@@ -36,6 +36,7 @@ export default class UnreadChats extends React.Component {
             <UnreadChatsItem key={key}
                 chat={
                     {
+                        id: this.state.chats[key]._id,
                         name: this.state.chats[key].from,
                         priority: this.state.chats[key].priority,
                         date: this.state.chats[key].createdAt,
