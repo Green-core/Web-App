@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import Template from './Template/Template'
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+//import { BrowserRouter as Router,Route} form "react-router-dom";
 import './App.css';
-import Viewusers from './Template/Views/Viewusers'
+
+import Signup from "./components/signup.component";
+import UsersList from "./components/users-list.component";
+
+//import logo from './logo.svg';
+//import Template from './Template/Template'
+//import './App.css';
+//import Viewusers from './Template/Views/Viewusers'
 
 // class app extends Component{
 //   render(){
@@ -27,7 +34,7 @@ import Viewusers from './Template/Views/Viewusers'
 
 function App() {
   return (
-    <Template />
+    //<Template />
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -47,7 +54,11 @@ function App() {
     // <div className= "container">
     //   <Viewusers />
     // </div>
-  )
+
+    <div className="container">
+      <Signup/>
+    </div>
+  );
 }
 
 export default App;
