@@ -83,7 +83,7 @@ export default class Signup extends Component{
 
         console.log(signup);
 
-        axios.post('http://localhost:5000/signup/add',signup)
+        axios.post('/signup/add',signup)
            .then(res=>console.log(res.data));
 
         // this.setState({
