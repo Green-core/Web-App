@@ -10,7 +10,7 @@ import Vunits from "./components/Viewvulnerableunits";
 
 
 //import logo from './logo.svg';
-//import Template from './Template/Template'
+import Template from './Template/Template'
 //import './App.css';
 //import Viewusers from './Template/Views/Viewusers'
 
@@ -37,7 +37,7 @@ import Vunits from "./components/Viewvulnerableunits";
 
 function App() {
   return (
-    //<Template />
+    <Template />
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -58,9 +58,9 @@ function App() {
     //   <Viewusers />
     // </div>
 
-    <div className="container">
-      <Vunits/>
-    </div>
+    //<div className="container">
+    //  <Vunits/>
+    //</div>
   );
 }
 
