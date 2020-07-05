@@ -1,0 +1,68 @@
+.side-nav.default-theme {
+  background-color: #e8eaed;
+}
+.side-nav.default-theme .side-nav-item-link,
+.side-nav.default-theme .side-nav-item-title {
+  color: darkslategray;
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.side-nav.default-theme .side-nav-item-link:active,
+.side-nav.default-theme .side-nav-item-link:focus,
+.side-nav.default-theme .side-nav-item-link:hover,
+.side-nav.default-theme .side-nav-item-title:active,
+.side-nav.default-theme .side-nav-item-title:focus,
+.side-nav.default-theme .side-nav-item-title:hover {
+  color:  #293846;
+  text-decoration: none;
+}
+.side-nav.default-theme .side-nav-item-link:hover,
+.side-nav.default-theme .side-nav-item-title:hover {
+  background-color: #a7b1c2;
+  color: darkslategray;
+}
+.side-nav.default-theme .side-nav-item {
+  position: relative;
+}
+.side-nav.default-theme .side-nav-item.active,
+.side-nav.default-theme .side-nav-item.expanded {
+  background-color: #a7b1c2;
+}
+.side-nav.default-theme .side-nav-item.active.level-0 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.active.level-0 > .side-nav-item-title,
+.side-nav.default-theme .side-nav-item.active.level-1 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.active.level-1 > .side-nav-item-title,
+.side-nav.default-theme .side-nav-item.active.level-2 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.active.level-2 > .side-nav-item-title,
+.side-nav.default-theme .side-nav-item.expanded.level-0 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.expanded.level-0 > .side-nav-item-title,
+.side-nav.default-theme .side-nav-item.expanded.level-1 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.expanded.level-1 > .side-nav-item-title,
+.side-nav.default-theme .side-nav-item.expanded.level-2 > .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.expanded.level-2 > .side-nav-item-title {
+  color: black;
+}
+.side-nav.default-theme .side-nav-item.level-0 .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.level-0 .side-nav-item-title {
+  padding: 0.9375rem 1.25rem 0.9375rem 1.5625rem;
+}
+.side-nav.default-theme .side-nav-item.level-1 .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.level-1 .side-nav-item-title {
+  padding: 0.4375rem 0.625rem 0.4375rem 3.125rem;
+}
+.side-nav.default-theme .side-nav-item.level-2 .side-nav-item-link,
+.side-nav.default-theme .side-nav-item.level-2 .side-nav-item-title {
+  padding: 0.4375rem 0.625rem 0.4375rem 4.6875rem;
+}
+.side-nav.default-theme .side-nav-chevron {
+  display: inline-block;
+  font-size: 0.5625rem;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.125rem;
+}
+.side-nav.default-theme .side-nav-icon {
+  margin-right: 0.625rem;
+}
