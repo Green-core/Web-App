@@ -4,6 +4,7 @@ import ViewAllChats from "./Views/ChatModule/ViewAllChats/ViewAllChats";
 import { Switch, Route } from "react-router-dom";
 import Dashboard from "./Views/Dashboard/Dashboard";
 import UnreadChats from "./Views/ChatModule/UnreadChats/UnreadChats";
+import UsersList from "./components/users-list.component"
 
 import ViewAllUsers from "./Views/UsersModule/ViewAllUsers/ViewAllUsers";
 import ViewSingleUser from "./Views/UsersModule/ViewSingleUsers/ViewSingleUser";
