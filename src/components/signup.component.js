@@ -83,7 +83,7 @@ export default class Signup extends Component{
 
         console.log(signup);
 
-        axios.post('/signup/add',signup)
+        axios.post('http://localhost:5000/signup/add',signup)
            .then(res=>console.log(res.data));
 
         // this.setState({
@@ -174,7 +174,7 @@ export default class Signup extends Component{
                 />
             </div>
             <div className ="form-group">
-                <input type="submit" value="SUBMIT" className="btn btn-primary"/>
+                <input type="submit" value="SUBMIT" className="btn btn-primary" />
 
             </div>
             </form>

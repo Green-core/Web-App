@@ -1,12 +1,15 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import logo from './logo.svg';
-import Template from './Template/Template'
+//import { BrowserRouter as Router,Route} form "react-router-dom";
 import './App.css';
-import Viewusers from './Template/Views/Viewusers'
-import Signup from './components/signup.component';
-//import Users from './components/user-list.component';
+
+import Signup from "./components/signup.component";
+import UsersList from "./components/users-list.component";
+
+//import logo from './logo.svg';
+//import Template from './Template/Template'
+//import './App.css';
+//import Viewusers from './Template/Views/Viewusers'
 
 // class app extends Component{
 //   render(){
@@ -56,7 +59,6 @@ function App() {
       <Signup/>
     </div>
   );
-  
 }
 
 export default App;
