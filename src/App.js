@@ -11,7 +11,6 @@ import Template from "./Template/Template"
 
 
 //import logo from './logo.svg';
-import Template from './Template/Template'
 //import './App.css';
 //import Viewusers from './Template/Views/Viewusers'
 
