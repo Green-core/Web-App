@@ -7,7 +7,8 @@ import Signup from "./components/signup.component";
 import UsersList from "./components/users-list.component";
 import Login from "./components/login.component";
 import Vunits from "./components/Viewvulnerableunits";
-import Template from "./Template/Template"
+import Template from "./Template/Template";
+import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 
 
 //import logo from './logo.svg';
@@ -64,6 +65,9 @@ function App() {
     //</div>
     // <div className="container">
     //   <Vunits/>
+    // </div>
+    // <div className="container">
+    //   <ViewAllAdmins/>
     // </div>
   );
 }

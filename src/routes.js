@@ -13,6 +13,8 @@ import ViewAllUnits from "./Views/UnitsModule/ViewAllUnits/ViewAllUnits";
 import ViewSingleUnit from "./Views/UnitsModule/ViewSingleUnits/ViewSingleUnit";
 
 import Registration from "./components/signup.component"
+import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins";
+import ViewSingleAdmin from "./Views/UsersModule/ViewSingleAdmin/ViewSingleAdmin";
 
 
 export default class Routes extends React.Component {
@@ -29,6 +31,10 @@ export default class Routes extends React.Component {
 
           <Route path="/users/all-users" exact component={ViewAllUsers} />
           <Route path="/users/view-single-user/:id" exact component={ViewSingleUser} />
+
+          <Route path="/users/all-admins" exact component={ViewAllAdmins} />
+          <Route path="/users/view-single-admin/:id" exact component={ViewSingleAdmin} />
+
 
           <Route path="/units/all-units" exact component={ViewAllUnits} />
           <Route path="/units/view-single-unit/:id" exact component={ViewSingleUnit}/>

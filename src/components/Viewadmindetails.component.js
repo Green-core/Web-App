@@ -24,7 +24,7 @@ export default class Viewadmindetails extends Component{
         }
 
         componentDidMount(){
-            axios.get('/signup/')
+            axios.get('/users/get-all-admins')
               .then(response =>{
                   this.setState({users :response.data})
               })
@@ -42,7 +42,7 @@ export default class Viewadmindetails extends Component{
         return(
             <div>
                 <h2></h2>
-                <h3>USERS</h3>
+                <h3>Admin Details</h3>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
