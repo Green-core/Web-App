@@ -34,6 +34,7 @@ export default function ViewUsersTable(props) {
           <button>View</button>
         </Link>
       </TableCell>
+      
     </TableRow>
     )
 

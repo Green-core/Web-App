@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
+moment().format();
 
 const useStyles = makeStyles({
     root: {
@@ -53,11 +55,14 @@ export default function SingleUnitPage(props) {
                 </Typography>
                 Created At:
                 <Typography className={classes.createdAt} color="textSecondary" gutterBottom>
-                    {props.singleUnit.createdAt}
+                    {moment(props.singleUnit.createdAt).format('D/MM/YYYY')}
+
                 </Typography>
                 Updated At:
                 <Typography className={classes.updatedAt} color="textSecondary" gutterBottom>
-                    {props.singleUnit.updatedAt}
+                    {moment(props.singleUnit.updatedAt).format('D/MM/YYYY')}
+
+
                 </Typography>
             </CardContent>
 

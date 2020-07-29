@@ -7,7 +7,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Link } from "react-router-dom";  
+import { Link } from "react-router-dom";
+import moment from 'moment';
+moment().format();
 
 const useStyles = makeStyles({
   table: {
@@ -17,27 +19,29 @@ const useStyles = makeStyles({
   },
 });
 
-  
+
 
 export default function ViewUnitsTable(props) {
   const classes = useStyles();
-  
-  const units = Object.keys(props.unit).map((key) => 
+
+  const units = Object.keys(props.unit).map((key) =>
+
+
 
     <TableRow key={key}>
-        <TableCell>{props.unit[key].userName}</TableCell>
-        <TableCell>{props.unit[key].location}</TableCell>
-        <TableCell>{props.unit[key].createdAt}</TableCell>
-        <TableCell>{props.unit[key].updatedAt}</TableCell>
-        <TableCell>
-          <Link to={`/units/view-single-unit/${props.unit[key]._id}`}>
-            <button>View</button>
-          </Link>
+      <TableCell>{props.unit[key].userName}</TableCell>
+      <TableCell>{props.unit[key].location}</TableCell>
+      <TableCell type="date">{moment(props.unit[key].createdAt).format('D/MM/YYYY')}</TableCell>
+      <TableCell type="date">{moment(props.unit[key].updatedAt).format('D/MM/YYYY')}</TableCell>
+      <TableCell>
+        <Link to={`/units/view-single-unit/${props.unit[key]._id}`}>
+          <button>View</button>
+        </Link>
       </TableCell>
-       
-        
+
+
     </TableRow>
-    )
+  )
 
 
   return (
@@ -50,14 +54,10 @@ export default function ViewUnitsTable(props) {
             <TableCell>Created At</TableCell>
             <TableCell>Updated At</TableCell>
             <TableCell></TableCell>
-            
-         
-            
-            
           </TableRow>
         </TableHead>
         <TableBody>
-            {units}
+          {units}
         </TableBody>
       </Table>
     </TableContainer>
