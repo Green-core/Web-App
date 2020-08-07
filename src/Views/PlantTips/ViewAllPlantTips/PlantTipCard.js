@@ -11,6 +11,7 @@ import AddIcon from "@material-ui/icons/AddRounded";
 
 import Typography from "@material-ui/core/Typography";
 import { green, grey } from "@material-ui/core/colors";
+import { Link } from "react-router-dom";
 
 const useStyles = (theme) => ({
   root: {
@@ -45,17 +46,6 @@ class PlantTipCard extends React.Component {
     const { classes } = this.props;
     return (
       <div style={{ padding: 10 }}>
-        <div style={{ fontSize: 19, fontWeight: "bold", marginBottom: 5 }}>
-          Mango
-        </div>
-        <Button
-          variant="contained"
-          className={classes.button}
-          startIcon={<AddIcon />}
-        >
-          Add Plant Tip
-        </Button>
-
         <Card className={classes.root} variant="outlined">
           <CardContent>
             <Typography
@@ -66,7 +56,7 @@ class PlantTipCard extends React.Component {
               Title
             </Typography>
             <Typography variant="body2" component="p">
-              {'"a benevolent smile"'}
+            {this.props.plantTip.title}
             </Typography>
             <Typography
               className={classes.title}
@@ -76,10 +66,11 @@ class PlantTipCard extends React.Component {
               Description
             </Typography>
             <Typography variant="body2" component="p">
-              {'"a benevolent smile"'}
+              {this.props.plantTip.body}
             </Typography>
           </CardContent>
           <CardActions>
+            <Link to={`/plant-tip/${this.props.plantTip._id}`}>
             <Button
               variant="contained"
               className={classes.button}
@@ -87,6 +78,7 @@ class PlantTipCard extends React.Component {
             >
               Edit
             </Button>
+            </Link>
             <Button
               variant="contained"
               className={classes.button}
