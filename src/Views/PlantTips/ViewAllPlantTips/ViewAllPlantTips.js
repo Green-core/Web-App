@@ -17,7 +17,9 @@ class ViewAllPlantTips extends React.Component {
   }
 
   componentDidMount() {
-    const {match:{params}} =this.props;
+    const {
+      match: { params },
+    } = this.props;
     Axios.get(`/plants/get/${params.id}`)
       .then((res) => {
         this.setState({
@@ -29,34 +31,48 @@ class ViewAllPlantTips extends React.Component {
         console.log(err);
       });
   }
-  componentWillReceiveProps() {}
+  componentWillReceiveProps() {
+    const {
+      match: { params },
+    } = this.props;
+    Axios.get(`/plants/get/${params.id}`)
+      .then((res) => {
+        this.setState({
+          plantName: res.data.type,
+          plantTips: res.data.tips,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   render() {
     const { plantName, plantTips, loading } = this.state;
-    const {match:{params}} =this.props;
+    const {
+      match: { params },
+    } = this.props;
     return loading ? (
       <div style={{ padding: 10 }}>
         <Loading />
       </div>
     ) : (
       <div style={{ padding: 10 }}>
-         <div style={{ fontSize: 19, fontWeight: "bold", marginBottom: 5 }}>
+        <div style={{ fontSize: 19, fontWeight: "bold", marginBottom: 5 }}>
           {plantName}
         </div>
         <Link to={`/plants/plant-tips/add/${params.id}`}>
-        <Button
-          variant="contained"
-          style={{backgroundColor:'white'}}
-         // className={classes.button}
-          startIcon={<AddIcon />}
-        >
-          Add Plant Tip
-        </Button>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "white" }}
+            // className={classes.button}
+            startIcon={<AddIcon />}
+          >
+            Add Plant Tip
+          </Button>
         </Link>
-         {plantTips.map((tip, i) => {
-            return (
-        <PlantTipCard key={i} plantName={plantName} plantTip={tip} />
-            )
-         })}
+        {plantTips.map((tip, i) => {
+          return <PlantTipCard key={i} plantName={plantName} plantTip={tip} />;
+        })}
       </div>
     );
   }
