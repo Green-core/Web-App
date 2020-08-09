@@ -10,11 +10,8 @@ import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from
         super(props);
         this.state = {
             open:true,
-            isExpire:false
         };
-        this.openDialog = this.openDialog.bind(this);
-        this.closeDialog = this.closeDialog.bind(this);
-        this.deleteSalesrep = this.deleteSalesrep.bind(this);
+       
     }
 
     openDialog = () => {
@@ -23,29 +20,20 @@ import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from
 
     closeDialog = () => {
         this.setState({open:false});
-        this.props.history.push("/admin/salesreps");
+        this.props.history.push("");
     }
 
-    deleteSalesrep = (e) => {
+    deleteTip = (e) => {
 
         e.preventDefault();
         const {match:{params}} =this.props;
-        var token = localStorage.getItem('jwtToken');
-       // this.setState({status:"inactive"})
-        const salesrep = {
-            status:"inactive"
-        };
         Axios
-            .put(`/salesreps/delete/${params.id}`,salesrep,{
-                headers:{
-                    'Authorization':token
-                }
-            })
+            .put(`/delete/${params.id}`)
             .then(res => {
                 if(res.status===200){
                     console.log(res.data);
                     this.setState({open:false});
-                    this.props.history.push('/admin/salesreps');
+                    this.props.history.push();
                 }
                 else{
                     const error = new Error(res.error);
@@ -53,15 +41,14 @@ import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from
                 }
             })
             .catch(err => {
-                if(err.tokenmessage){
-                    console.log(err.tokenmessage);
-                    this.setState({isExpire:true}) ; 
+                if(err.message){
+                    console.log(err.message);
+                     
                 }
             });
     }
 
     render() {
-        if(!this.state.isExpire){
             return (
                 <Dialog
                     open={this.state.open}
@@ -73,19 +60,19 @@ import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from
                       }}
                 
                 >
-                    <DialogTitle style={{color:"red"}} >{'Are you sure you want to delete the salesrep?'}</DialogTitle>
-                    <DialogContent>
+                    <DialogTitle style={{color:"red"}} >{'Are you sure you want to delete the plant tip?'}</DialogTitle>
+                    {/* <DialogContent>
                         <DialogContentText>
-                            This action will permanantly delete all data about the salesrep. 
+                            This act 
                         </DialogContentText>
-                    </DialogContent>
+                    </DialogContent> */}
                     <DialogActions>
                         <Button 
                             onClick={this.closeDialog} 
                             variant='contained'
                             type='submit'
                         >
-                            Disagree
+                            Yes
                         </Button>
                         <Button 
                             onClick={this.deleteSalesrep}
@@ -93,23 +80,11 @@ import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from
                             variant='contained'
                             type='submit'
                         >
-                            Agree
+                            No
                         </Button>
                     </DialogActions>
                 </Dialog>
             );
-        }
-        else{
-            return(
-                <div>                
-                    <Redirect to={{
-                        pathname:"/login",
-                        state:{expire:"Session expired please login again"}
-                        }}/>
-                    
-                </div>
-            )
-        }
-    }
+        }         
 }
 export default DeletePlantTip;

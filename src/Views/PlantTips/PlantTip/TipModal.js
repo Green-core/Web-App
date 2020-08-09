@@ -7,10 +7,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from '@material-ui/core';
 import Modal from "@material-ui/core/Modal";
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
+
 
 const useStyles = (theme) => ({
 
@@ -57,11 +54,7 @@ const useStyles = (theme) => ({
         marginTop:theme.spacing(0) ,    
         color:"red"
     },
-    formControl: {
-        marginLeft:theme.spacing(8),
-        width:'80%',
-        marginBottom:theme.spacing(4),
-      },
+  
 });
 
  class TipModal extends React.Component {
@@ -82,51 +75,13 @@ const useStyles = (theme) => ({
         this.setState({[e.target.id] : e.target.value});
     }
 
-   
-    onSubmit = (e) => {
-
-        e.preventDefault();
-        const {match:{params}} =this.props;
-       
-        const salesrep = {
-
-            title : this.state.title,
-            description : this.state.description,
-        };
-       
-        Axios
-            .put(`/salesreps/update/${params.id}`,salesrep,{
-                headers:{
-                    'Authorization':token
-                }
-            })
-            .then(res => {
-                if(res.status===200){
-                 //   console.log(res.data);
-                    this.setState({open:false});
-                    this.props.history.push("/admin/salesreps");   
-                }
-                else{
-                    const error = new Error(res.error);
-                    throw error;
-                }
-            })
-            .catch(err => {
-                this.setState({errors:err.response.data});
-                if(err.tokenmessage){
-                   // console.log(err.tokenmessage);
-                    this.setState({isExpire:true}) ; 
-                }
-            })
-    }
-
     openModal = () => {
         this.setState({open:true});
     }
 
     closeModal = () => {
         this.setState({open:false});
-        this.props.history.push("/plant-tips");
+      //  this.props.history.push("/plant-tips");
     }
 
     render() {
