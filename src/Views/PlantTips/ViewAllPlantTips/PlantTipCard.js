@@ -70,7 +70,7 @@ class PlantTipCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions>
-            <Link to={`/plant-tip/${this.props.plantTip._id}`}>
+            <Link to={`/plants/plant-tips/edit/${this.props.plantId}/${this.props.plantTip._id}`}>
             <Button
               variant="contained"
               className={classes.button}

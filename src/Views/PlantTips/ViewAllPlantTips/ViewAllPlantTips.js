@@ -71,7 +71,7 @@ class ViewAllPlantTips extends React.Component {
           </Button>
         </Link>
         {plantTips.map((tip, i) => {
-          return <PlantTipCard key={i} plantName={plantName} plantTip={tip} />;
+          return <PlantTipCard key={i} plantName={plantName} plantTip={tip} plantId ={params.id}/>;
         })}
       </div>
     );
