@@ -7,10 +7,10 @@ import Signup from "./components/signup.component";
 import UsersList from "./components/users-list.component";
 import Login from "./components/login.component";
 import Vunits from "./components/Viewvulnerableunits";
+import Template from "./Template/Template"
 
 
 //import logo from './logo.svg';
-//import Template from './Template/Template'
 //import './App.css';
 //import Viewusers from './Template/Views/Viewusers'
 
@@ -37,7 +37,8 @@ import Vunits from "./components/Viewvulnerableunits";
 
 function App() {
   return (
-    //<Template />
+    <Template />
+    // <Signup />
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -58,9 +59,12 @@ function App() {
     //   <Viewusers />
     // </div>
 
-    <div className="container">
-      <Vunits/>
-    </div>
+    //<div className="container">
+    //  <Vunits/>
+    //</div>
+    // <div className="container">
+    //   <Vunits/>
+    // </div>
   );
 }
 
