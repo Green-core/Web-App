@@ -1,13 +1,13 @@
 import React from 'react';
 import Axios from 'axios';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 import { Card,CardContent,CardActions } from '@material-ui/core';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from '@material-ui/core';
 import Modal from "@material-ui/core/Modal";
-import FormControl from '@material-ui/core/FormControl';
+//import FormControl from '@material-ui/core/FormControl';
 
 const useStyles = theme => ({
 
@@ -94,9 +94,9 @@ class AddPlantTip extends React.Component{
             .post(`/plants/addTips/${params.id}`,tip)
             .then(res => {
                 if(res.status===200){
-                  console.log(res.data);
+                //  console.log(res.data);
                   this.setState({open:false});
-                  this.props.history.push(`/plants/plant-tips/${params.id}`); 
+                  this.props.history.push(`/plants/plant-tips/${params.id}/`); 
                 }
                 else{
                     const error = new Error(res.error);
@@ -118,46 +118,8 @@ class AddPlantTip extends React.Component{
     closeModal = () => {
         const {match:{params}} =this.props;
         this.setState({open:false});
-        this.props.history.push(`/plants/plant-tips/${params.id}`);
+        this.props.history.push(`/plants/plant-tips/${params.id}/`);
     }
-
-    // componentDidMount(){
-        
-    //     const {match:{params}} =this.props;
-    //     Axios
-    //         .get(`/salesreps/${params.id}`)
-    //         .then(res => {
-    //             this.setState({
-    //                 title:res.data.title,
-    //                 description:res.data.description,
-    //             });
-    //         })
-    //         .catch(err=>{
-    //             if(err.message){
-    //              //   console.log(err.tokenmessage);
-    //                 this.setState({isExpire:true}) ; 
-    //             }
-    //         })
-    //     Axios
-    //         .get('/distributors',{
-    //           headers:{
-    //             'Authorization':token
-    //           }
-    //         })
-    //         .then(res => {
-    //           this.setState({
-    //             distributors : res.data,
-                
-    //           });
-    //         })
-    //         .catch(err => {
-    //           if(err.tokenmessage){
-    //             console.log(err.tokenmessage);
-    //             this.setState({isExpire:true});
-    //           }
-    //           console.log(err);
-    //         })
-    // }
 
    render(){
          const { classes } = this.props;

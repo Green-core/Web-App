@@ -4,13 +4,13 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
+//import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import AddIcon from "@material-ui/icons/AddRounded";
+//import AddIcon from "@material-ui/icons/AddRounded";
 
 import Typography from "@material-ui/core/Typography";
-import { green, grey } from "@material-ui/core/colors";
+import { green} from "@material-ui/core/colors";
 import { Link } from "react-router-dom";
 
 const useStyles = (theme) => ({
@@ -70,7 +70,7 @@ class PlantTipCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions>
-            <Link to={`/plants/plant-tips/edit/${this.props.plantId}/${this.props.plantTip._id}`}>
+            <Link to={`/plants/plant-tips/${this.props.plantId}/edit/${this.props.plantTip._id}`}>
             <Button
               variant="contained"
               className={classes.button}
@@ -79,6 +79,7 @@ class PlantTipCard extends React.Component {
               Edit
             </Button>
             </Link>
+            <Link to={`/plants/plant-tips/${this.props.plantId}/remove/${this.props.plantTip._id}`}>
             <Button
               variant="contained"
               className={classes.button}
@@ -86,6 +87,7 @@ class PlantTipCard extends React.Component {
             >
               Delete
             </Button>
+            </Link>
             {/* <IconButton aria-label="Edit" variant="contained">
                             <EditIcon />
                         </IconButton>

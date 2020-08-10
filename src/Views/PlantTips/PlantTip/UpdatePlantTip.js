@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 import { Card,CardContent,CardActions } from '@material-ui/core';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -94,9 +94,9 @@ class UpdatePlantTip extends React.Component{
             .post(`/plants/updateTips/${this.state.tipId}`,tip)
             .then(res => {
                 if(res.status===200){
-                  console.log(res.data);
+                //  console.log(res.data);
                   this.setState({open:false});
-                  this.props.history.push(`/plants/plant-tips/${this.state.plantId}`); 
+                  this.props.history.push(`/plants/plant-tips/${this.state.plantId}/`); 
                 }
                 else{
                     const error = new Error(res.error);
@@ -118,7 +118,7 @@ class UpdatePlantTip extends React.Component{
     closeModal = () => {
        // const {match:{params}} =this.props;
         this.setState({open:false});
-        this.props.history.push(`/plants/plant-tips/${this.state.plantId}`);
+        this.props.history.push(`/plants/plant-tips/${this.state.plantId}/`);
     }
 
     componentDidMount(){
