@@ -40,11 +40,10 @@ export default class Routes extends React.Component {
           <Route path="/units/view-single-unit/:id" exact component={ViewSingleUnit}/>
 
           <Route path= "/plants/all-plants" exact component={ViewAllPlants}/>
-          <Route path= "/plants/plant-tips/:id" exact component={ViewAllPlantTips}/>
-          <Route path= "/plants/plant-tips/add/:id" exact component={AddPlantTip}/>
-          <Route path= "/plants/plant-tips/edit/:id/:tipId" exact component={UpdatePlantTip}/>
-          <Route path= "/plants/plant-tips/remove/:id/:tipId" exact component={DeletePlantTip}/>
-
+          <Route  path= "/plants/plant-tips/:id/" exact component={ViewAllPlantTips}/>
+          <Route path= "/plants/plant-tips/:id/add" exact component={AddPlantTip}/>
+          <Route path= "/plants/plant-tips/:id/edit/:tipId" exact  component={UpdatePlantTip}/>
+          <Route path= "/plants/plant-tips/:id/remove/:tipId" exact component={DeletePlantTip}/>
           <Route />
         </Switch>
       </div>

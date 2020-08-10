@@ -1,21 +1,21 @@
 import React from 'react';
 import Axios from 'axios';
 import FormHelperText from '@material-ui/core/FormHelperText';
-//import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Card,CardContent,CardActions } from '@material-ui/core';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from '@material-ui/core';
 import Modal from "@material-ui/core/Modal";
 
-const useStyles = theme => ({
+
+const useStyles = (theme) => ({
 
     textField: { 
-        margin:theme.spacing(1),
-        width:'90%',
+        marginLeft:theme.spacing(8),
+        width:'80%',
     },
     actionbuttons:{
-     //   margin:theme.spacing(2),
         marginLeft:theme.spacing(7),
         marginRight:theme.spacing(8),
     },
@@ -37,20 +37,18 @@ const useStyles = theme => ({
           
     },
     modalCard: {
-        width: '50%',
-        height:"30%",
-        maxWidth: 550,
-     //   overflow:'auto'
+        width: '90%',
+        height:"100%",
+        maxWidth: 700,
+        overflow:'auto'
     },
     modalCardContent: {
-        alignItems:'center',
-      //  justifyContent:'center',
         display: 'flex',
         flexDirection: 'column',
     },
-    // marginTop: {
-    //     marginTop: theme.spacing(2),
-    // },
+    marginTop: {
+        marginTop: theme.spacing(2),
+    },
     textfielderror: {
         marginLeft: theme.spacing(8), 
         marginTop:theme.spacing(0) ,    
@@ -59,56 +57,22 @@ const useStyles = theme => ({
   
 });
 
-class UpdatePlantTip extends React.Component{
-
+ class TipModal extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            plantId:this.props.match.params.id,
-            tipId:this.props.match.params.tipId,
+
             title:'',
             description:'',
             open:true,
             errors:{},
         };
-     
+       
     }
 
     onChange = (e) => {
         this.setState({[e.target.id] : e.target.value});
-    }
-
-   
-    onSubmit = (e) => {
-
-        e.preventDefault();
-        const tip = {
-            //tipId:this.state.tipId,
-            plantId:this.state.plantId,
-            title : this.state.title,
-            description : this.state.description,
-        };
-       
-        Axios
-            .post(`/plants/updateTips/${this.state.tipId}`,tip)
-            .then(res => {
-                if(res.status===200){
-                //  console.log(res.data);
-                  this.setState({open:false});
-                  this.props.history.push(`/plants/plant-tips/${this.state.plantId}/`); 
-                }
-                else{
-                    const error = new Error(res.error);
-                    throw error;
-                }
-            })
-            .catch(err => {
-                this.setState({errors:err.response.data});
-                if(err){
-                   console.log(err.message);
-                }
-            })
     }
 
     openModal = () => {
@@ -116,35 +80,12 @@ class UpdatePlantTip extends React.Component{
     }
 
     closeModal = () => {
-       // const {match:{params}} =this.props;
         this.setState({open:false});
-        this.props.history.push(`/plants/plant-tips/${this.state.plantId}/`);
+      //  this.props.history.push("/plant-tips");
     }
 
-    componentDidMount(){
-     //   const tipId = this.props.
-    //    const {match:{params}} =this.props;      // tip id
-    console.log(this.state.tipId);
-        Axios
-            .get(`/plants/get/${this.state.plantId}`)          // plant id
-            .then(res => {
-                console.log(res.data.tips)
-               var tip = res.data.tips.filter(tip=>{return tip._id===this.state.tipId})       // tip object id
-               console.log(tip);
-                this.setState({
-                    title:tip[0].title,
-                    description:tip[0].body,
-                });
-            })
-            .catch(err=>{
-                if(err.message){
-                    console.log(err.message);
-                }
-            })
-    }
-
-   render(){
-         const { classes } = this.props;
+    render() {
+        const { classes } = this.props;
         const { title,description,open,errors } = this.state;
         return (
             <Modal 
@@ -176,7 +117,7 @@ class UpdatePlantTip extends React.Component{
                             <TextField
                                 required
                                 id="description"
-                                label="Description"
+                                label="Full Name"
                                 value={description}
                                 type="text"
                                 onChange={this.onChange}
@@ -204,10 +145,8 @@ class UpdatePlantTip extends React.Component{
                         </CardContent>
                     </form>
                 </Card>
-            </Modal>   
+            </Modal>      
         );
     }
-        
 }
-
-export default withStyles(useStyles)(UpdatePlantTip);
+export default withStyles(useStyles)(TipModal);

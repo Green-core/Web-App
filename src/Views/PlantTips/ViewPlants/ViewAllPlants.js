@@ -14,7 +14,7 @@ class ViewAllPlants extends React.Component {
   componentDidMount() {
     Axios.get("/plants/get")
       .then((res) => {
-        console.log(res.data);
+     //   console.log(res.data);
         this.setState({ plants: res.data });
       })
       .catch((err) => {

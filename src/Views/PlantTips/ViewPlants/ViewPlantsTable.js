@@ -9,7 +9,7 @@ import {
   Paper,
   Button,
 } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/AddRounded";
+//import AddIcon from "@material-ui/icons/AddRounded";
 import ViewIcon from "@material-ui/icons/Visibility";
 import { Link } from "react-router-dom";
 
@@ -32,9 +32,9 @@ const useStyles = (theme) => ({
 });
 
 class ViewAllPlantsTable extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const { classes, plants } = this.props;
@@ -68,14 +68,14 @@ class ViewAllPlantsTable extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.props.plants.map((plant, i) => {
+              {plants.map((plant, i) => {
                 return (
                   <TableRow key={i} hover>
                     <TableCell>{plant.type}</TableCell>
                     <TableCell>0</TableCell>
                     <TableCell>{plant.tips.length}</TableCell>
                     <TableCell>
-                      <Link to={`/plants/plant-tips/${plant._id}`}>
+                      <Link to={`/plants/plant-tips/${plant._id}/`}>
                         <Button
                           variant="contained"
                           className={classes.button}

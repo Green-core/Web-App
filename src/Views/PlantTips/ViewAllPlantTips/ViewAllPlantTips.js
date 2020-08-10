@@ -60,7 +60,7 @@ class ViewAllPlantTips extends React.Component {
         <div style={{ fontSize: 19, fontWeight: "bold", marginBottom: 5 }}>
           {plantName}
         </div>
-        <Link to={`/plants/plant-tips/add/${params.id}`}>
+        <Link to={`/plants/plant-tips/${params.id}/add`}>
           <Button
             variant="contained"
             style={{ backgroundColor: "white" }}
