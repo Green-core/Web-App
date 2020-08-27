@@ -35,17 +35,37 @@ export default class Menu extends React.Component {
       },
       {
         id: 3,
+        label: "Plants",
+        icon: "fas fa-battery-half",
+      //  link: "/plants/all-plants",
+        items: [
+          {
+            id: 31,
+            label: "All Plants",
+            icon: "fas fa-car",
+            link: "/plants/all-plants",
+          },
+          {
+            id: 32,
+            label: "Plant Tips",
+            icon: "fas fa-bullhorn",
+            link: "/plants/plant-tips",
+          },
+       ], 
+      },
+      {
+        id: 4,
         label: "Users",
         icon: "fas fa-battery-half",
         items: [
           {
-            id: 31,
+            id: 41,
             label: "All Users",
             icon: "fas fa-car",
             link: "/users/all-users",
           },
           {
-            id: 32,
+            id: 42,
             label: "New Users",
             icon: "fas fa-bullhorn",
             link: "/users/new-users",
@@ -53,24 +73,24 @@ export default class Menu extends React.Component {
         ],
       },
       {
-        id: 4,
+        id: 5,
         label: "Messages",
         icon: "fas fa-battery-half",
         items: [
           {
-            id: 41,
+            id: 51,
             label: "All Messages",
             icon: "fas fa-car",
             link: "/chats/all-chats",
           },
           {
-            id: 42,
+            id: 52,
             label: "Unread Messages",
             icon: "fas fa-bullhorn",
             link: "/chats/unread-chats",
           },
           {
-            id: 43,
+            id: 53,
             label: "Archived Messages",
             icon: "fas fa-bullhorn",
             link: "/chats/archived-chats",

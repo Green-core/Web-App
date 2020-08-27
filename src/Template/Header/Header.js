@@ -3,7 +3,7 @@ import React from 'react'
 function Header(){
     return (
         <div>
-            head
+            Green Core
             {/* <ul>
                 <li>one </li>
                 <li>two </li>
