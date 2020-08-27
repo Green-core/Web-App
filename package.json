@@ -13,9 +13,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "react-side-nav": "^1.1.1",
-    "react-virtualized": "^9.21.2"
+    "react-virtualized": "^9.21.2",
+    "whatwg-fetch": "^3.4.0"
   },
   "scripts": {
     "start": "set PORT=3000 && react-scripts start",
