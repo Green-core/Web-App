@@ -15,7 +15,7 @@ import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 //import './App.css';
 //import Viewusers from './Template/Views/Viewusers'
 
-// class app extends Component{
+// class app extends Component{ó
 //   render(){
 //     return(
 //       <div className= "App">
@@ -38,7 +38,7 @@ import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 
 function App() {
   return (
-    <Template />
+    <Template/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
@@ -60,9 +60,9 @@ function App() {
     //   <Viewusers />
     // </div>
 
-    //<div className="container">
-    //  <Vunits/>
-    //</div>
+    // <div className="container">
+    //   <Vunits/>
+    // </div>
     // <div className="container">
     //   <Vunits/>
     // </div>
