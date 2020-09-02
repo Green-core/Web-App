@@ -38,7 +38,7 @@ import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 
 function App() {
   return (
-    <Template/>
+    // <Template/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
@@ -69,6 +69,9 @@ function App() {
     // <div className="container">
     //   <ViewAllAdmins/>
     // </div>
+    <div className="minuracontainer">
+      <Login/>
+    </div>
   );
 }
 

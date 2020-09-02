@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -29,7 +28,7 @@ body {
   display: grid;
   grid-template-areas: 
     'header header header header header header' 
-    'left middle middle middle middle right' 
+    'left middle middle middle middle right'    
     'left middle middle middle middle right2' 
     'footer footer footer footer footer footer';
   /* grid-column-gap: 10px; - if you want gap between the columns */
