@@ -23,13 +23,13 @@ export default class Menu extends React.Component {
             id: 21,
             label: "All Units",
             icon: "fas fa-car",
-            link: "units/all-units",
+            link: "/units/all-units",
           },
           {
             id: 22,
             label: "Vulnerable Units",
             icon: "fas fa-bullhorn",
-            link: "units/vulnerable-units",
+            link: "/units/vulnerable-units",
           },
         ],
       },
@@ -42,14 +42,20 @@ export default class Menu extends React.Component {
             id: 31,
             label: "All Users",
             icon: "fas fa-car",
-            link: "/all-users",
+            link: "/users/all-users",
           },
           {
             id: 32,
             label: "New Users",
             icon: "fas fa-bullhorn",
-            link: "/new-users",
+            link: "/users/new-users",
           },
+          {
+            id: 33,
+            label: "Admins",
+            icon: "fas fa-bullhorn",
+            link: "/users/all-admins"
+          }
         ],
       },
       {

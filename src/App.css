@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background:url("pic/gar1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top:em(70);
+  text-align: center;
 }
 
 .App-logo {
@@ -21,11 +32,17 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: red;
 }
 
 .App-link {
   color: #61dafb;
+  background:url("pic/gar1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top:em(70);
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +52,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background:url("pic/gar4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top:em(70);
+  text-align: center;
+}
+
+.hero{
+  height: 100%;
+  width: 100%;
+  background:url("pic/gar4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero-copy{
+  padding-top:em(70);
+  text-align: center;
+
+
 }
