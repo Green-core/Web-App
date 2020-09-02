@@ -369,29 +369,49 @@ export default class Home extends Component{
                    <div>
                     <p> SIGN UP</p>
                       <input type="text" 
+                         required
+                         width="100" 
+                         height="50"
+                         size='50'
                        placeholder="Name" 
                        value={signUpName}
+                       
                        onChange={this.onTextboxChangeSignUpName}
 
                        />
                         <br /><br />
                       <input type="email"
+                        required
                         placeholder="Email" 
+                        width="100" 
+                         height="50"
+                         size='50'
                         value={signUpEmail}
+                        
                         onChange={this.onTextboxChangeSignUpEmail}
 
 
                         /> <br /><br />
-                      <input type="password" 
+                      <input type="password"
+                        required 
                         placeholder="Password" 
+                        width="100" 
+                         height="50"
+                         size='50'
                         value={signUpPassword}
+                        
                         onChange={this.onTextboxChangeSignUpPassword}
 
                         /> <br /><br />
 
                       <input type="text" 
+                       required
                        placeholder="Mobile"
+                       width="100" 
+                         height="50"
+                         size='50'
                        value={signUpMobile}
+                       required
                        onChange={this.onTextboxChangeSignUpMobile}
 
 

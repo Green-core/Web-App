@@ -38,7 +38,7 @@ import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <Home />
+    <Signup/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
