@@ -9,6 +9,7 @@ import Login from "./components/login.component";
 import Vunits from "./components/Viewvulnerableunits";
 import Template from "./Template/Template";
 import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
+import Home from "./components/Home/Home";
 
 
 //import logo from './logo.svg';
@@ -38,7 +39,8 @@ import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 
 function App() {
   return (
-    // <Template/>
+    <Template/>
+//     <Signup/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
