@@ -1,10 +1,11 @@
-
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -18,7 +19,8 @@ body {
   padding: 10px;
   /* min-height: 6vh; */
   /* height: 6vh; */
-    background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255);
+  opacity: 65%;
 }
 
 /* The grid container */
@@ -26,16 +28,26 @@ body {
   display: grid;
   grid-template-areas: 
     'header header header header header header' 
-    'left middle middle middle middle right' 
+    'left middle middle middle middle right'    
     'left middle middle middle middle right2' 
     'footer footer footer footer footer footer';
   /* grid-column-gap: 10px; - if you want gap between the columns */
   
   grid-gap: 1px;
-  background-color: black;
+  /* background-color:green; */
   padding: 1px;
-} 
+  grid-area: span;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 
+  background:url("../pic/gar3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+} 
 /* .grid-container > div {
     background-color: rgba(255, 255, 255);
 } */
@@ -43,7 +55,8 @@ body {
 /* Style the left column */
 .left {
   grid-area: left;
-  background-color: #e8eaed;
+  /* background-color: #49795f; */
+   opacity: 65%; 
   /* padding: 10px; */
 }
 
@@ -53,7 +66,8 @@ body {
   padding: 10px;
   height: 88vh;
   overflow: auto;
-  background-color: rgba(255, 255, 255);
+  opacity: 80%;
+  /* background-color: rgb(119, 190, 151); */
 }
 
 /* Style the right1 column */
@@ -61,15 +75,20 @@ body {
     grid-area: right;
     padding: 10px;
     max-height: 46vh;
-    background-color: rgba(255, 255, 255);
+    font-weight: bold;
+    background-color:  rgb(98, 100, 99);
+    opacity: 75%;
 }
 
 /* Style the right2 column */
 .right2 {
   grid-area: right2;
   padding: 10px;
+  font-size: large;
+  font-weight: bold;
   max-height: 46vh;
-  background-color: rgba(255, 255, 255);
+  background-color: rgb(98, 100, 99);
+  opacity: 50%;
 }
 
 /* Style the footer */
@@ -78,6 +97,7 @@ body {
   background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
+  opacity: 80%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

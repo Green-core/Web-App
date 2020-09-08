@@ -136,12 +136,12 @@
 
 import React, {Component} from 'react';
 import axios from 'axios';
+// import "./signup.css";
 import 'whatwg-fetch';
 import{
     getFromStorage,
     setInStorage,
 }from '../utils/storage';
-
 
 export default class Home extends Component{
     constructor(props){

@@ -70,6 +70,12 @@ export default class Menu extends React.Component {
             icon: "fas fa-bullhorn",
             link: "/users/new-users",
           },
+          {
+            id: 33,
+            label: "Admins",
+            icon: "fas fa-bullhorn",
+            link: "/users/all-admins"
+          }
         ],
       },
       {

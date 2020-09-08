@@ -2,8 +2,8 @@ import React from 'react'
 
 function Header(){
     return (
-        <div>
-            Green Core
+        <div className="">
+            head
             {/* <ul>
                 <li>one </li>
                 <li>two </li>

@@ -65,8 +65,8 @@ export default class ViewAllChats extends React.Component {
         const view = this.state.loading ?
             <Loading /> :
             
-            <div style={{padding: 10}}>
-                All Messages
+            <div style={{padding: 10},{backgroundColor:'green'}}>
+            <div style={{fontsize:50},{textAlign: 'center'}} >All Messeges</div>
                 <ViewChatsTable chat={this.state.chat}/>
             </div>
             return (
