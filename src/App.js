@@ -7,7 +7,8 @@ import Signup from "./components/signup.component";
 import UsersList from "./components/users-list.component";
 import Login from "./components/login.component";
 import Vunits from "./components/Viewvulnerableunits";
-import Template from "./Template/Template"
+import Template from "./Template/Template";
+import Home from "./components/Home/Home";
 
 
 //import logo from './logo.svg';
@@ -37,7 +38,7 @@ import Template from "./Template/Template"
 
 function App() {
   return (
-    <Template />
+    <Signup/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
