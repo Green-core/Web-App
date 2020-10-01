@@ -12,7 +12,7 @@ export default class Menu extends React.Component {
         id: 1,
         label: "Dashboard",
         icon: "fas fa-battery-half",
-        link: "/dashboard"
+        link: "/"
       },
       {
         id: 2,

@@ -28,8 +28,9 @@ export default class Routes extends React.Component {
     return (
       <div>
         <Switch>
+          <Route path="/" exact component={Dashboard} />
           <Route path="/register" exact component={Registration}/>
-          <Route path="/dashboard" exact component={Dashboard} />
+          {/* <Route path="/dashboard" exact component={Dashboard} /> */}
           <Route path="/chats/all-chats" exact component={ViewAllChats} />
           <Route path="/chats/single-chat" exact component={ViewSingleMessage} />
           <Route path="/chats/unread-chats" exact component={UnreadChats} />
