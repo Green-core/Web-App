@@ -3,6 +3,7 @@ import axios from 'axios';
 import Loading from '../../Loading/Loading';
 import './ViewAllUnits.css';
 import ViewUnitsTable from './ViewUnitsTable';
+import { red } from '@material-ui/core/colors';
 
 export default class ViewAllUnits extends React.Component {
     //constructor
@@ -36,8 +37,8 @@ export default class ViewAllUnits extends React.Component {
         console.log(this.state.loading);
         const view = this.state.loading ?
             <Loading /> :
-            <div style={{ padding: 10 }}>
-                All Units
+            <div style={{ padding: 10 }, {backgroundColor:'green' }}>
+                <div style={{fontsize:30},{textAlign: 'center'}}>All Units</div>
                 <ViewUnitsTable unit={this.state.unit} />
             </div>
         return (

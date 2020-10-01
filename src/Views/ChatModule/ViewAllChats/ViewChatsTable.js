@@ -7,6 +7,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/AddRounded";
 
 import { Link } from "react-router-dom";
 
@@ -34,8 +36,18 @@ export default function ViewChatsTable(props) {
       </TableCell>
       <TableCell>{props.chat[key].createdAt}</TableCell>
       <TableCell>
-        <Link to={`/chats/view-single-chat/${props.chat[key]._id}`}>
+        {/* <Link to={`/chats/view-single-chat/${props.chat[key]._id}`}>
           <button>View</button>
+        </Link> */}
+        <Link to={`/chats/view-single-chat/${props.chat[key]._id}`}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "greenyellow" }}
+            // className={classes.button}
+            // startIcon={<AddIcon />}
+          >
+            View
+          </Button>
         </Link>
       </TableCell>
     </TableRow>

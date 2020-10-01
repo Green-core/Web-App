@@ -41,8 +41,9 @@ export default class ViewAllUsers extends React.Component {
         const view = this.state.loading ?
             <Loading /> :
 
-            <div style={{ padding: 10 }}>
-                All Users
+            <div style={{ padding: 10 },{backgroundColor:'green'}}>
+                <div style={{fontsize:30},{textAlign: 'center'}} >All Users</div>
+
                 <ViewUsersTable user={this.state.user} />
 
             </div>

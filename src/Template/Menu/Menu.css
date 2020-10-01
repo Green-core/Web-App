@@ -1,9 +1,11 @@
 .side-nav.default-theme {
   background-color: #e8eaed;
+  height: 86vh;
 }
 .side-nav.default-theme .side-nav-item-link,
 .side-nav.default-theme .side-nav-item-title {
-  color: darkslategray;
+  /* color: darkslategray; */
+  color: green;
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -15,13 +17,17 @@
 .side-nav.default-theme .side-nav-item-title:active,
 .side-nav.default-theme .side-nav-item-title:focus,
 .side-nav.default-theme .side-nav-item-title:hover {
-  color:  #293846;
+  /* color:  #293846; */
+  /* background-color: #a7b1c2; */
+  color: greenyellow;
   text-decoration: none;
 }
 .side-nav.default-theme .side-nav-item-link:hover,
 .side-nav.default-theme .side-nav-item-title:hover {
-  background-color: #a7b1c2;
-  color: darkslategray;
+  /* background-color: #a7b1c2; */
+  background-color: greenyellow;
+  /* color: darkslategray; */
+  color: green;
 }
 .side-nav.default-theme .side-nav-item {
   position: relative;
@@ -29,6 +35,7 @@
 .side-nav.default-theme .side-nav-item.active,
 .side-nav.default-theme .side-nav-item.expanded {
   background-color: #a7b1c2;
+  /* background-color: greenyellow; */
 }
 .side-nav.default-theme .side-nav-item.active.level-0 > .side-nav-item-link,
 .side-nav.default-theme .side-nav-item.active.level-0 > .side-nav-item-title,

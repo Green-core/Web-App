@@ -1,11 +1,12 @@
-
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   font-family: Arial, Helvetica, sans-serif;
-}
+  height: 100%;
+  width: 100%;
+} */
 
 
 /* .sample-grid {
@@ -17,8 +18,10 @@ body {
   grid-area: header;
   padding: 10px;
   /* min-height: 6vh; */
-  /* height: 6vh; */
-    background-color: rgba(255, 255, 255);
+  height: 7vh;
+  background-color: rgba(255, 255, 255);
+  opacity: 65%;
+  width: 100vw;
 }
 
 /* The grid container */
@@ -26,16 +29,26 @@ body {
   display: grid;
   grid-template-areas: 
     'header header header header header header' 
-    'left middle middle middle middle right' 
+    'left middle middle middle middle right'    
     'left middle middle middle middle right2' 
     'footer footer footer footer footer footer';
   /* grid-column-gap: 10px; - if you want gap between the columns */
   
-  grid-gap: 1px;
-  background-color: black;
-  padding: 1px;
-} 
+  /* grid-gap: 1px; */
+  /* background-color:green; */
+  /* padding: 1px; */
+  grid-area: span;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
 
+  background:url("../pic/gar3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+} 
 /* .grid-container > div {
     background-color: rgba(255, 255, 255);
 } */
@@ -43,17 +56,22 @@ body {
 /* Style the left column */
 .left {
   grid-area: left;
-  background-color: #e8eaed;
+  /* background-color: #49795f; */
+   opacity: 65%; 
   /* padding: 10px; */
+  height: 86vh;
+  width: 20vw;
 }
 
 /* Style the middle column */
 .middle {
   grid-area: middle;
   padding: 10px;
-  height: 88vh;
+  height: 86vh;
   overflow: auto;
-  background-color: rgba(255, 255, 255);
+  opacity: 80%;
+  background-color: rgb(119, 190, 151);
+  width: 60vw;
 }
 
 /* Style the right1 column */
@@ -61,15 +79,24 @@ body {
     grid-area: right;
     padding: 10px;
     max-height: 46vh;
-    background-color: rgba(255, 255, 255);
+    font-weight: bold;
+    background-color: #f1f1f1;
+    /* background-color:  rgb(98, 100, 99); */
+    opacity: 80%;
+    width: 20vw;
 }
 
 /* Style the right2 column */
 .right2 {
   grid-area: right2;
   padding: 10px;
-  max-height: 46vh;
-  background-color: rgba(255, 255, 255);
+  font-size: large;
+  font-weight: bold;
+  max-height: 45vh;
+  background-color: #e8eaed;
+  /* background-color: rgb(98, 100, 99); */
+  opacity: 80%;
+  width: 20vw;
 }
 
 /* Style the footer */
@@ -78,10 +105,13 @@ body {
   background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
+  opacity: 80%;
+  width: 100vw;
+  height: 7vh;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .grid-container  {
     grid-template-areas: 
       'header header header header header header' 
@@ -91,4 +121,4 @@ body {
       'right2 right2 right2 right2 right2 right2'
       'footer footer footer footer footer footer';
   }
-}
+} */

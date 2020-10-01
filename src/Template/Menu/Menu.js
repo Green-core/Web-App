@@ -12,7 +12,7 @@ export default class Menu extends React.Component {
         id: 1,
         label: "Dashboard",
         icon: "fas fa-battery-half",
-        link: "/dashboard"
+        link: "/"
       },
       {
         id: 2,
@@ -70,6 +70,12 @@ export default class Menu extends React.Component {
             icon: "fas fa-bullhorn",
             link: "/users/new-users",
           },
+          {
+            id: 33,
+            label: "Admins",
+            icon: "fas fa-bullhorn",
+            link: "/users/all-admins"
+          }
         ],
       },
       {
