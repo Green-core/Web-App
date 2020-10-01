@@ -39,8 +39,8 @@ import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <Template/>
-//     <Signup/>
+    // <Signup/>
+    <Template />
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
@@ -71,9 +71,9 @@ function App() {
     // <div className="container">
     //   <ViewAllAdmins/>
     // </div>
-    <div className="minuracontainer">
-      <Login/>
-    </div>
+    // <div className="minuracontainer">
+    //   <Login/>
+    // </div>
   );
 }
 

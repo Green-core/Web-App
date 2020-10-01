@@ -12,7 +12,7 @@ export default class Template extends React.Component {
 
   render() {
     return (
-            <div className="grid-container">
+        <div className="grid-container">
             <Router>
               <div className="header">
                 <Header />
