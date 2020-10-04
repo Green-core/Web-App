@@ -48,10 +48,10 @@ export default class ViewSingleUnit extends React.Component {
 
     render() {
         const unitId = this.state.unit._id;
-
         const singleUnit = (
             <SingleUnitPage
                 singleUnit={{
+                    userId: this.state.unit.userID,
                     userName: this.state.unit.userName,
                     location: this.state.unit.location,
                     createdAt: this.state.unit.createdAt,
