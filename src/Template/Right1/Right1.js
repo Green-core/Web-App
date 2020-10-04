@@ -1,18 +1,9 @@
 import React from 'react'
+import VulnerableUnits from '../../Views/UnitsModule/ViewAllVulnerableUnits/ViewAllVulnerableUnitsLite'
 
 function VulDevices(){
     return(
-        <table>
-            <tr>
-                <td>Vul Device 1</td>
-            </tr>
-            <tr>
-                <td>Vul Device 2</td>
-            </tr>
-            <tr>
-                <td>Vul Device 3</td>
-            </tr>
-        </table>
+        <VulnerableUnits />
     )
 }
 
