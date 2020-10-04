@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment'
 
 const useStyles = makeStyles({
   root: {
@@ -34,7 +35,7 @@ export default function ReplyCard(props) {
           {props.reply.message}
         </Typography>
         <Typography variant="body2" component="p" color="textSecondary">
-            {props.reply.time}
+            {moment(props.reply.time).format('MMMM Do YYYY, h:mm a')}
         </Typography>
       </CardContent>
     </Card>
