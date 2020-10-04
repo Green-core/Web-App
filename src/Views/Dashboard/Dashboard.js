@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { PieChart } from "react-minimal-pie-chart";
 import Card from "react-bootstrap/Card";
 import Map from "./Map/Map";
+// import Map from "./Map/DistrictData";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ export default function Dashboard() {
   const [unitCount, getUnitCount] = React.useState(null);
   const [vulUnitCount, getVulUnitCount] = React.useState(null);
   const [unreadChatCount, getUnreadChatCount] = React.useState(null);
+  const [plantCount, getPlantCount] = React.useState(null);
 
   React.useEffect(() => {
     fetch("/dashboard/get-total-users")
@@ -64,49 +66,59 @@ export default function Dashboard() {
       });
   }, []); // <-- Have to pass in [] here!
 
+  React.useEffect(() => {
+    fetch("/dashboard/get-plant-count")
+      .then((results) => results.json())
+      .then((data) => {
+        console.log(data.result);
+        if (data.status == 200) getPlantCount(data.result);
+        else getPlantCount(0);
+      });
+  }, []); // <-- Have to pass in [] here!
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{overflow: "hidden"}}>
       <Grid container spacing={1}>
-        <Grid item xs={4}>
-          <Paper className={classes.paper} style={{ height: "18rem" }}>
+        <Grid item xs={6}>
+          <Paper className={classes.paper} style={{ height: "27rem" }}>
             <Map />
             {/* <PieChart /> */}
           </Paper>
         </Grid>
 
-        <Grid item xs={8}>
+        <Grid item xs={6}>
           <Grid container spacing={1}>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <Card style={{ height: "7rem" }}>
                 <Card.Body>
                   <Card.Subtitle align="center" className="mb-2 text-muted">
-                    Total Users
+                    Total Gardners
                   </Card.Subtitle>
                   <Card.Title align="center">{userCount}</Card.Title>
                 </Card.Body>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <Card style={{ height: "7rem" }}>
                 <Card.Body>
                   <Card.Subtitle align="center" className="mb-2 text-muted">
-                    Total Units
+                    Total Sensor Modules
                   </Card.Subtitle>
                   <Card.Title align="center">{unitCount}</Card.Title>
                 </Card.Body>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <Card style={{ height: "7rem" }}>
                 <Card.Body>
                   <Card.Subtitle align="center" className="mb-2 text-muted">
-                    Unread Messages
+                    New Tickets
                   </Card.Subtitle>
                   <Card.Title align="center">{unreadChatCount}</Card.Title>
                 </Card.Body>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <Card style={{ height: "7rem" }}>
                 <Card.Body>
                   <Card.Subtitle align="center" className="mb-2 text-muted">
@@ -116,21 +128,15 @@ export default function Dashboard() {
                 </Card.Body>
               </Card>
             </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=6</Paper>
-            </Grid>
-
             <Grid item xs={6}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
+            <Card style={{ height: "7rem" }}>
+                <Card.Body>
+                  <Card.Subtitle align="center" className="mb-2 text-muted">
+                    Total Plant Types
+                  </Card.Subtitle>
+                  <Card.Title align="center">{plantCount}</Card.Title>
+                </Card.Body>
+              </Card>
             </Grid>
           </Grid>
         </Grid>
