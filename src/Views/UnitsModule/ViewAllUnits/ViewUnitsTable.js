@@ -9,6 +9,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from "react-router-dom";
 import moment from 'moment';
+import Button from "@material-ui/core/Button";
+import ViewIcon from "@material-ui/icons/Visibility";
+
 moment().format();
 
 const useStyles = makeStyles({
@@ -34,8 +37,15 @@ export default function ViewUnitsTable(props) {
       <TableCell type="date">{moment(props.unit[key].createdAt).format('D/MM/YYYY')}</TableCell>
       <TableCell type="date">{moment(props.unit[key].updatedAt).format('D/MM/YYYY')}</TableCell>
       <TableCell>
-        <Link to={`/units/view-single-unit/${props.unit[key]._id}`}>
-          <button>View</button>
+      <Link to={`/units/view-single-unit/${props.unit[key]._id}`}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "white" }}
+            // className={classes.button}
+            startIcon={<ViewIcon />}
+          >
+            View
+          </Button>
         </Link>
       </TableCell>
 

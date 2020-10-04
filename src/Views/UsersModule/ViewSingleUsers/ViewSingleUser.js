@@ -34,6 +34,7 @@ export default class ViewSingleUser extends React.Component {
         const singleUser = (
             <SingleUserProfile
                 singleUser={{
+                    userId: this.state.user._id,
                     name: this.state.user.name,
                     email: this.state.user.email,
                     role: this.state.user.role,

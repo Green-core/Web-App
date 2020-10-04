@@ -8,8 +8,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from "react-router-dom";
+import moment from 'moment';
 import Button from "@material-ui/core/Button";
 import ViewIcon from "@material-ui/icons/Visibility";
+
+moment().format();
 
 const useStyles = makeStyles({
   table: {
@@ -19,33 +22,32 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ViewUsersTable(props) {
-  const classes = useStyles();
-  
-  const users = Object.keys(props.user).map((key) => 
 
+
+export default function ViewUnitsTableLite(props) {
+  const classes = useStyles();
+
+  const units = Object.keys(props.unit).map((key) =>
     <TableRow key={key}>
-        <TableCell>{props.user[key].name}</TableCell>
-        <TableCell>{props.user[key].email}</TableCell>
-        <TableCell>{props.user[key].role}</TableCell>
-        <TableCell>{props.user[key].gender}</TableCell>
-        <TableCell>{props.user[key].contact}</TableCell>
-        {/* <TableCell>{props.user[key].address}</TableCell> */}
-        <TableCell>
-        <Link to={`/users/view-single-user/${props.user[key]._id}`}>
-        <Button
+      <TableCell>{props.unit[key].userName}</TableCell>
+      <TableCell>{props.unit[key].location}</TableCell>
+      {/* <TableCell type="date">{moment(props.unit[key].createdAt).format('D/MM/YYYY')}</TableCell> */}
+      {/* <TableCell type="date">{moment(props.unit[key].updatedAt).format('D/MM/YYYY')}</TableCell> */}
+      <TableCell>
+      
+      <Link to={`/units/view-single-unit/${props.unit[key]._id}`}>
+          <Button
             variant="contained"
             style={{ backgroundColor: "white" }}
             // className={classes.button}
             startIcon={<ViewIcon />}
           >
-            View
+          View
           </Button>
         </Link>
       </TableCell>
-      
     </TableRow>
-    )
+  )
 
 
   return (
@@ -53,18 +55,15 @@ export default function ViewUsersTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Role</TableCell>
-            <TableCell>Gender</TableCell>
-            <TableCell>Contact Number</TableCell>
-            {/* <TableCell>Address</TableCell> */}
+            <TableCell>User Name</TableCell>
+            <TableCell>Location</TableCell>
+            {/* <TableCell>Created At</TableCell> */}
+            {/* <TableCell>Updated At</TableCell> */}
             <TableCell></TableCell>
-            
           </TableRow>
         </TableHead>
         <TableBody>
-            {users}
+          {units}
         </TableBody>
       </Table>
     </TableContainer>
