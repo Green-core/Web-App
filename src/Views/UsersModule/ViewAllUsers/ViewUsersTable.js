@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import ViewIcon from "@material-ui/icons/Visibility";
 
 const useStyles = makeStyles({
   table: {
@@ -28,10 +30,17 @@ export default function ViewUsersTable(props) {
         <TableCell>{props.user[key].role}</TableCell>
         <TableCell>{props.user[key].gender}</TableCell>
         <TableCell>{props.user[key].contact}</TableCell>
-        <TableCell>{props.user[key].address}</TableCell>
+        {/* <TableCell>{props.user[key].address}</TableCell> */}
         <TableCell>
         <Link to={`/users/view-single-user/${props.user[key]._id}`}>
-          <button>View</button>
+        <Button
+            variant="contained"
+            style={{ backgroundColor: "white" }}
+            // className={classes.button}
+            startIcon={<ViewIcon />}
+          >
+            View
+          </Button>
         </Link>
       </TableCell>
       
@@ -49,7 +58,7 @@ export default function ViewUsersTable(props) {
             <TableCell>Role</TableCell>
             <TableCell>Gender</TableCell>
             <TableCell>Contact Number</TableCell>
-            <TableCell>Address</TableCell>
+            {/* <TableCell>Address</TableCell> */}
             <TableCell></TableCell>
             
           </TableRow>
