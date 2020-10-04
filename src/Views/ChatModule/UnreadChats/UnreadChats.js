@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import UnreadChatsItem from './UnreadChatsItem'
 import Loading from '../../Loading/Loading'
+import UnreadChatsTable from './UnreadChatsTable'
 
 export default class UnreadChats extends React.Component {
 
@@ -32,28 +32,18 @@ export default class UnreadChats extends React.Component {
 
 
     render() {
-        const unreadChats = Object.keys(this.state.chats).map((key) =>
-            <UnreadChatsItem key={key}
-                chat={
-                    {
-                        id: this.state.chats[key]._id,
-                        name: this.state.chats[key].from,
-                        priority: this.state.chats[key].priority,
-                        date: this.state.chats[key].createdAt,
-                    }
-                }
-            />
-        )
 
         const view = this.state.loading ?
             <Loading /> :
-            <div style={{ padding: '10px' }}>
-                New Messages
-            {unreadChats}
-            </div>
+            this.state.chats[0] ?
+            <div style={{ padding: 10 }, {backgroundColor:'green' }}>
+                <div style={{fontsize:30},{textAlign: 'center'}}>Unread Chats</div>
+                <UnreadChatsTable chat={this.state.chats} />
+            </div> :
+            <h1>No Chats</h1>
+        
         return (
             view
         )
-
     }
 }

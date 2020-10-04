@@ -18,7 +18,8 @@
   grid-area: header;
   padding: 10px;
   /* min-height: 6vh; */
-  height: 7vh;
+  max-height: 7vh;
+  min-height: 7vh;
   background-color: rgba(255, 255, 255);
   opacity: 65%;
   width: 100vw;
@@ -59,7 +60,8 @@
   /* background-color: #49795f; */
    opacity: 65%; 
   /* padding: 10px; */
-  height: 86vh;
+  max-height: 86vh;
+  min-height: 86vh;
   width: 20vw;
 }
 
@@ -67,23 +69,25 @@
 .middle {
   grid-area: middle;
   padding: 10px;
-  height: 86vh;
+  max-height: 86vh;
+  min-height: 86vh;
   overflow: auto;
   opacity: 80%;
   background-color: rgb(119, 190, 151);
-  width: 60vw;
+  width: 55vw;
 }
 
 /* Style the right1 column */
 .right {
     grid-area: right;
     padding: 10px;
-    max-height: 46vh;
+    max-height: 43vh;
+    min-height: 43vh;
     font-weight: bold;
     background-color: #f1f1f1;
     /* background-color:  rgb(98, 100, 99); */
     opacity: 80%;
-    width: 20vw;
+    width: 25vw;
 }
 
 /* Style the right2 column */
@@ -92,11 +96,12 @@
   padding: 10px;
   font-size: large;
   font-weight: bold;
-  max-height: 45vh;
+  max-height: 43vh;
+  min-height: 43vh;
   background-color: #e8eaed;
   /* background-color: rgb(98, 100, 99); */
   opacity: 80%;
-  width: 20vw;
+  width: 25vw;
 }
 
 /* Style the footer */
@@ -107,7 +112,8 @@
   text-align: center;
   opacity: 80%;
   width: 100vw;
-  height: 7vh;
+  max-height: 7vh;
+  min-height: 7vh;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
