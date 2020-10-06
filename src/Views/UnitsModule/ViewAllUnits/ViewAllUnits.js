@@ -59,9 +59,6 @@ export default class ViewAllUnits extends React.Component {
         <div className="left">
           <Menu />
         </div>
-        {/* <div className="middle">
-                 <Routes/>
-               </div> */}
         <div className="right">
           <Right1 />
         </div>
