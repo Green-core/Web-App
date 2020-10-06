@@ -5,6 +5,13 @@ import{
     getFromStorage,
     setInStorage,
 }from '../../utils/storage';
+//import { Link } from "react-router-dom";  
+import { BrowserRouter, Link} from "react-router-dom";
+import TemplateView from "../../Template/Template";
+import Template from '../../Template/Template';
+
+
+
 
 
 export default class Home extends Component{
@@ -168,7 +175,7 @@ export default class Home extends Component{
        });
         //Post request to backend
 
-        fetch ('/signin/signin' , {
+        fetch ('/user/signin' , {
             method:'POST',
             headers:{
                 'Content-Type' : 'application/json'
@@ -190,9 +197,12 @@ export default class Home extends Component{
                     signInPassword:'',
                     token: json.token,
                     
+                    
 
 
                 });
+                
+                window.location.replace("/template");
             } else {
                 this.setState({
                     signInError:json.message,
@@ -224,7 +234,7 @@ export default class Home extends Component{
             return(<div><p>Loading....</p></div>);
         }
 
-        if(!token){
+                   
             return(
                 <div>
                 
@@ -267,7 +277,11 @@ export default class Home extends Component{
                       <br />
                       <br />
                       <br/>
-                      <button onClick={this.onSignIn}>Sign In</button>
+                      
+                      <button onClick={this.onSignIn }>Sign In</button><br/><br/>
+                     
+                      <button>Forgot Password</button>
+
 
                    </div>
                    </center>
@@ -277,14 +291,9 @@ export default class Home extends Component{
             );
         }
 
-        return(
-            <div>
-              <p>Account</p>
-            </div>
-        );
-    }
+       
+    
 
 
 
 }
-

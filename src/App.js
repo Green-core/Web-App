@@ -1,14 +1,16 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-//import { BrowserRouter as Router,Route} form "react-router-dom";
+import { BrowserRouter as Router,Route} from "react-router-dom";
 import './App.css';
 
 import Signup from "./components/signup.component";
 import UsersList from "./components/users-list.component";
-import Login from "./components/login.component";
+
 import Vunits from "./components/Viewvulnerableunits";
 import Template from "./Template/Template";
 import Home from "./components/Home/Home";
+import Forgot from "./components/forgot.component";
+import {  Switch, withRouter } from "react-router-dom";
 
 
 //import logo from './logo.svg';
@@ -38,7 +40,8 @@ import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <Signup/>
+    
+    <Home/>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
@@ -66,6 +69,12 @@ function App() {
     // <div className="container">
     //   <Vunits/>
     // </div>
+    // <Router>
+    // <Switch>
+    //     <Route path="/" component={Home} exact/>
+    //     <Route path="/template" component={Template} />
+    // </Switch>
+    // </Router>
   );
 }
 

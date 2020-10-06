@@ -141,6 +141,8 @@ import{
     getFromStorage,
     setInStorage,
 }from '../utils/storage';
+const crypto = require("crypto");
+
 
 
 export default class Home extends Component{
@@ -248,13 +250,12 @@ export default class Home extends Component{
         signUpPassword,
         signUpMobile,
        } = this.state;
-
        this.setState({
            isLoading:true,
        });
 
        //Post request to backend
-       fetch('signin/register',{
+       fetch('user/register',{
            method:'POST',
            headers:{
             'Content-Type' : 'application/json'
@@ -263,12 +264,15 @@ export default class Home extends Component{
                name:signUpName,
                email:signUpEmail,
                password:signUpPassword,
-               mobile:signUpMobile,
+               mobile:signUpMobile
 
            }),
+           
         })
-       .then(res=>res.json())
+       .then(res=>res.json()
+       )
        .then(json=>{
+           console.log(json)
            if(json.success){
                
 
