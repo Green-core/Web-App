@@ -11,6 +11,8 @@ import Template from "./Template/Template";
 import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 import Home from "./components/Home/Home";
 
+import { Switch, BrowserRouter as Router } from "react-router-dom";
+import Routes from './routes'
 
 //import logo from './logo.svg';
 //import './App.css';
@@ -40,7 +42,12 @@ import Home from "./components/Home/Home";
 function App() {
   return (
     // <Signup/>
-    <Template />
+    // <Template />
+    // <Switch>
+    <Router>
+      <Routes />
+    </Router>
+    // </Switch>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
