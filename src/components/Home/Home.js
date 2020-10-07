@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import "./Home.css";
+
 
 import axios from 'axios';
 import 'whatwg-fetch';
