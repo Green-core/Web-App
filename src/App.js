@@ -9,7 +9,10 @@ import Login from "./components/login.component";
 import Vunits from "./components/Viewvulnerableunits";
 import Template from "./Template/Template";
 import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
+import Home from "./components/Home/Home";
 
+import { Switch, BrowserRouter as Router } from "react-router-dom";
+import Routes from './routes'
 
 //import logo from './logo.svg';
 //import './App.css';
@@ -38,7 +41,13 @@ import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins"
 
 function App() {
   return (
-    <Template/>
+    // <Signup/>
+    // <Template />
+    // <Switch>
+    <Router>
+      <Routes />
+    </Router>
+    // </Switch>
     // <Signup />
     // <div className="App">
     //   <header className="App-header">
@@ -61,6 +70,18 @@ function App() {
     // </div>
 
   
+    // <div className="container">
+    //   <Vunits/>
+    // </div>
+    // <div className="container">
+    //   <Vunits/>
+    // </div>
+    // <div className="container">
+    //   <ViewAllAdmins/>
+    // </div>
+    // <div className="minuracontainer">
+    //   <Login/>
+    // </div>
   );
 }
 

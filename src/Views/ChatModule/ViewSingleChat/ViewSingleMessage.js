@@ -5,6 +5,13 @@ import ReplyCard from "./ReplyCard";
 import MessageCard from "./MessageCard";
 import ReplyMessage from "./ReplyMessage";
 
+import "../../../Template/Template.css";
+import Header from "../../../Template/Header/Header";
+import Menu from "../../../Template/Menu/Menu";
+import Footer from "../../../Template/Footer/Footer";
+import Right1 from "../../../Template/Right1/Right1";
+import Right2 from "../../../Template/Right2/Right2";
+
 export default class ViewSingleMessage extends React.Component {
   constructor(props) {
     super(props);
@@ -75,6 +82,26 @@ export default class ViewSingleMessage extends React.Component {
         />
       </div>
     );
-    return view;
+    return (
+      <div className="grid-container">
+        <div className="header">
+          <Header />
+        </div>
+        <div className="left">
+          <Menu />
+        </div>
+        <div className="right">
+          <Right1 />
+        </div>
+        <div className="right2">
+          <Right2 />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+
+        <div className="middle">{view}</div>
+      </div>
+    );
   }
 }
