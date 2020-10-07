@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/AddRounded";
 
+import "../../../Template/Template.css";
+import Header from "../../../Template/Header/Header";
+import Menu from "../../../Template/Menu/Menu";
+import Footer from "../../../Template/Footer/Footer";
+import Right1 from "../../../Template/Right1/Right1";
+import Right2 from "../../../Template/Right2/Right2";
+
 class ViewAllPlantTips extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +63,25 @@ class ViewAllPlantTips extends React.Component {
         <Loading />
       </div>
     ) : (
+      
+      <div className="grid-container">
+        <div className="header">
+          <Header />
+        </div>
+        <div className="left">
+          <Menu />
+        </div>
+        <div className="right">
+          <Right1 />
+        </div>
+        <div className="right2">
+          <Right2 />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+
+        <div className="middle">
       <div style={{ padding: 10 }}>
         <div style={{ fontSize: 19, fontWeight: "bold", marginBottom: 5 }}>
           {plantName}
@@ -73,6 +99,8 @@ class ViewAllPlantTips extends React.Component {
         {plantTips.map((tip, i) => {
           return <PlantTipCard key={i} plantName={plantName} plantTip={tip} plantId ={params.id}/>;
         })}
+      </div>
+      </div>
       </div>
     );
   }

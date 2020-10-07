@@ -136,13 +136,13 @@
 
 import React, {Component} from 'react';
 import axios from 'axios';
+// import "./signup.css";
 import 'whatwg-fetch';
 import{
     getFromStorage,
     setInStorage,
 }from '../utils/storage';
 const crypto = require("crypto");
-
 
 
 export default class Home extends Component{
@@ -250,12 +250,10 @@ export default class Home extends Component{
         signUpPassword,
         signUpMobile,
        } = this.state;
-       this.setState({
-           isLoading:true,
-       });
+       
 
        //Post request to backend
-       fetch('user/register',{
+       fetch('signin/register',{
            method:'POST',
            headers:{
             'Content-Type' : 'application/json'
@@ -273,8 +271,16 @@ export default class Home extends Component{
        )
        .then(json=>{
            console.log(json)
+           this.setState({
+               error:json.success,
+               message:json.message
+           })
+
            if(json.success){
-               
+            //    console.log(json.message)
+            this.setState({
+                isLoading:true,
+            });
 
                if(json.success){
                 this.setState({
@@ -285,6 +291,13 @@ export default class Home extends Component{
                     signUpName:'',
                     signUpMobile:'',
                 });
+
+                this.props.history.push({
+                    pathname: '/dashboard'
+                  })   
+                console.log('hist',this.props);
+
+
              }else{
                 this.setState({
                     signUpError:json.message,
@@ -360,20 +373,29 @@ export default class Home extends Component{
             signUpError,
         } = this.state;
 
-        if(isLoading){
+        if(isLoading&&!this.state.error){
             return(<div><p>Loading....</p></div>);
         }
 
-        if(!token){
+       
             return(
                 <div>
                 <center>
-                   <h1> GREEN_CORE</h1>
-                  
+                   <h1> GREEN_CORE</h1><br/>
+                   <h2> SIGN UP</h2>
                    <div>
-                    <p> SIGN UP</p>
+                   {
+                    (!this.state.error) ? (
+                       <p>{this.state.message}</p>
+                        
+                    ) :(null)
+                }
+                
+                 <br/>
+                 
+                    
                       <input type="text" 
-                         required
+                         //required
                          width="100" 
                          height="50"
                          size='50'
@@ -385,7 +407,7 @@ export default class Home extends Component{
                        />
                         <br /><br />
                       <input type="email"
-                        required
+                       // required
                         placeholder="Email" 
                         width="100" 
                          height="50"
@@ -397,7 +419,7 @@ export default class Home extends Component{
 
                         /> <br /><br />
                       <input type="password"
-                        required 
+                        //required 
                         placeholder="Password" 
                         width="100" 
                          height="50"
@@ -409,13 +431,13 @@ export default class Home extends Component{
                         /> <br /><br />
 
                       <input type="text" 
-                       required
+                       //required
                        placeholder="Mobile"
                        width="100" 
                          height="50"
                          size='50'
                        value={signUpMobile}
-                       required
+                      // required
                        onChange={this.onTextboxChangeSignUpMobile}
 
 
@@ -428,13 +450,9 @@ export default class Home extends Component{
                    </center>
                 </div>
             );
-        }
+        
 
-        return(
-            <div>
-              <p>Account</p>
-            </div>
-        );
+       
     }
 
 

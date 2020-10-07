@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import axios from 'axios';
 import 'whatwg-fetch';
 import{
@@ -9,6 +10,8 @@ import{
 import { BrowserRouter, Link} from "react-router-dom";
 import TemplateView from "../../Template/Template";
 import Template from '../../Template/Template';
+
+
 
 
 
@@ -175,7 +178,7 @@ export default class Home extends Component{
        });
         //Post request to backend
 
-        fetch ('/user/signin' , {
+        fetch ('signin/signin' , {
             method:'POST',
             headers:{
                 'Content-Type' : 'application/json'
@@ -202,7 +205,13 @@ export default class Home extends Component{
 
                 });
                 
-                window.location.replace("/template");
+             // window.location.replace("/dashboard");
+              this.props.history.push({
+                pathname: '/dashboard'
+              })   
+            console.log('hist',this.props);
+            
+          //  this.props.history.push('/dashboard')       
             } else {
                 this.setState({
                     signInError:json.message,
@@ -234,22 +243,28 @@ export default class Home extends Component{
             return(<div><p>Loading....</p></div>);
         }
 
-                   
+      
+            //console.log("hii");
             return(
                 <div>
                 
                 <center>
                    <h1> GREEN_CORE</h1>
                    <br/>
+                   
+                   <h2> Sign In</h2>
                    <br/>
+                   <br/>
+                   
 
                    <div>
                      {
                          (signInError) ? (
-                             <p>{signInError}</p>
+                            <p>{signInError}</p>
+                             
                          ) :(null)
                      }
-                      <h2> Sign In</h2>
+                     
                       <br/>
                       <br/>
 
@@ -280,7 +295,10 @@ export default class Home extends Component{
                       
                       <button onClick={this.onSignIn }>Sign In</button><br/><br/>
                      
-                      <button>Forgot Password</button>
+                      <button>Forgot Password</button><br/><br/>
+                {/*<Link to="/forgotpassword">Get help</Link>*/}
+
+                      <Link to ='/register'><button>Sign Up</button></Link>
 
 
                    </div>
@@ -289,10 +307,10 @@ export default class Home extends Component{
                    
                 </div>
             );
-        }
+        
 
-       
-    
+      
+    }
 
 
 

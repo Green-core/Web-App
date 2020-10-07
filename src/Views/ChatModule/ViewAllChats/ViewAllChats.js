@@ -1,76 +1,72 @@
-import React from 'react'
-import axios from 'axios'
-import Loading from '../../Loading/Loading'
-import ViewChatsTable from './ViewChatsTable'
-import './ViewAllChats.css'
+import React from "react";
+import axios from "axios";
+import Loading from "../../Loading/Loading";
+import ViewChatsTable from "./ViewChatsTable";
+import "./ViewAllChats.css";
+
+import "../../../Template/Template.css";
+import Header from "../../../Template/Header/Header";
+import Menu from "../../../Template/Menu/Menu";
+import Footer from "../../../Template/Footer/Footer";
+import Right1 from "../../../Template/Right1/Right1";
+import Right2 from "../../../Template/Right2/Right2";
 
 export default class ViewAllChats extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chat: [],
+      loading: false,
+    };
+  }
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            chat: [],
-            loading: false
-        }
+  componentDidMount() {
+    this.setState({ loading: true });
+    axios
+      .get("/chats/get-all")
+      .then((res) => {
+        const chatData = res.data;
+        const state = this.state;
+        this.setState({
+          ...state,
+          chat: { ...chatData },
+          loading: false,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
 
-        this.handleInputChange = this.handleInputChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+  render() {
+    const view = this.state.loading ? (
+      <Loading />
+    ) : (
+      <div style={({ padding: 10 }, { backgroundColor: "green" })}>
+        <div style={({ fontsize: 50 }, { textAlign: "center" })}>
+          All Messeges
+        </div>
+        <ViewChatsTable chat={this.state.chat} />
+      </div>
+    );
+    return (
+      <div className="grid-container">
+        <div className="header">
+          <Header />
+        </div>
+        <div className="left">
+          <Menu />
+        </div>
+        <div className="right">
+          <Right1 />
+        </div>
+        <div className="right2">
+          <Right2 />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
 
-    componentDidMount() {
-        this.setState({ loading: true })
-        axios
-            .get(
-                '/chats/get-all'
-            )
-            .then((res) => {
-                const chatData = res.data 
-                const state  = this.state 
-                this.setState({
-                    ...state,
-                    chat : {...chatData}, 
-                    loading: false})
-            })
-            .catch((error) => console.log(error))
-
-    }
-
-    handleInputChange(event) {
-        // const { name, value, type, checked } = event.target
-        // type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
-    }
-
-    handleSubmit(event) {
-        // console.log(this.state.reply)
-        // console.log(this.state.closed)
-
-        // const data = {
-        //     id: "5ece4f41f8dc143c847d3c85",
-        //     reply: this.state.reply,
-        //     from: "Admin",
-        //     fromID: "5ecb578fb2b10b0844de4cff"
-        // }
-
-        // axios.post(
-        //     '/chats/reply',
-        //     data
-        // ).then(res => {
-        //     console.log(res)
-        // })
-
-    }
-
-    render() {
-
-        const view = this.state.loading ?
-            <Loading /> :
-            
-            <div style={{padding: 10}}>
-                All Messages
-                <ViewChatsTable chat={this.state.chat}/>
-            </div>
-            return (
-                view
-        )
-    }
+        <div className="middle">{view}</div>
+      </div>
+    );
+  }
 }

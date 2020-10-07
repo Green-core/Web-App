@@ -71,6 +71,12 @@ export default class Menu extends React.Component {
             icon: "fas fa-bullhorn",
             link: "/users/new-users",
           },
+          {
+            id: 33,
+            label: "Admins",
+            icon: "fas fa-bullhorn",
+            link: "/users/all-admins"
+          }
         ],
       },
       {
@@ -90,12 +96,12 @@ export default class Menu extends React.Component {
             icon: "fas fa-bullhorn",
             link: "/chats/unread-chats",
           },
-          {
-            id: 53,
-            label: "Archived Messages",
-            icon: "fas fa-bullhorn",
-            link: "/chats/archived-chats",
-          }
+          // {
+          //   id: 53,
+          //   label: "Archived Messages",
+          //   icon: "fas fa-bullhorn",
+          //   link: "/chats/archived-chats",
+          // }
         ],
       },
     ];
