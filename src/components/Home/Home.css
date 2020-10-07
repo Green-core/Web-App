@@ -1,5 +1,8 @@
 body {
 
-    background-image: url("../../pic/gar1.jpg");
+    background-image: url("../../pic/gar7.jpg");
     background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
    }
