@@ -60,15 +60,7 @@ function App() {
     //   <Viewusers />
     // </div>
 
-    // <div className="container">
-    //   <Vunits/>
-    // </div>
-    // <div className="container">
-    //   <Vunits/>
-    // </div>
-    // <div className="container">
-    //   <ViewAllAdmins/>
-    // </div>
+  
   );
 }
 
