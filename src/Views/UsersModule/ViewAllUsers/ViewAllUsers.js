@@ -21,10 +21,12 @@ export default class ViewAllUsers extends React.Component {
   }
 
   componentDidMount() {
+    console.log("In all user screen")
     this.setState({ loading: true });
     axios
       .get("/users/get-all")
       .then((res) => {
+        console.log(res.data)
         const userData = res.data;
         const state = this.state;
         this.setState({
@@ -33,7 +35,12 @@ export default class ViewAllUsers extends React.Component {
           loading: false,
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        this.setState({
+          loading: false
+        })
+        console.log(error)
+      });
   }
 
   render() {

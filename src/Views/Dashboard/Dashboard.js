@@ -142,7 +142,7 @@ export default function Dashboard() {
                 <Card style={{ height: "7rem" }}>
                   <Card.Body>
                     <Card.Subtitle align="center" className="mb-2 text-muted">
-                      New Tickets
+                      New Messages
                     </Card.Subtitle>
                     <Card.Title align="center">{unreadChatCount}</Card.Title>
                   </Card.Body>
