@@ -7,7 +7,6 @@ const User=props => (
         <td>{props.user.lastname}</td>
         <td>{props.user.gender}</td>
         <td>{props.user.emailadress}</td>
-        {/* <td>{props.user.password}</td> */}
         <td>{props.user.contactno}</td>
         <td>{props.user.adress}</td>
     </tr>

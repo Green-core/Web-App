@@ -8,11 +8,12 @@ import { Link } from "react-router-dom";
 export default class Menu extends React.Component {
   render() {
     const menuItems = [
+      
       {
         id: 1,
         label: "Dashboard",
         icon: "fas fa-battery-half",
-        link: "/"
+        link: "/dashboard"
       },
       {
         id: 2,
