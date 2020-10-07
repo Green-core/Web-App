@@ -1,7 +1,8 @@
 import React from "react";
 import ViewSingleMessage from "./Views/ChatModule/ViewSingleChat/ViewSingleMessage";
 import ViewAllChats from "./Views/ChatModule/ViewAllChats/ViewAllChats";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route,withRouter ,Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import Dashboard from "./Views/Dashboard/Dashboard";
 import UnreadChats from "./Views/ChatModule/UnreadChats/UnreadChats";
 import UsersList from "./components/users-list.component"
@@ -12,6 +13,8 @@ import ViewSingleUser from "./Views/UsersModule/ViewSingleUsers/ViewSingleUser";
 import ViewAllUnits from "./Views/UnitsModule/ViewAllUnits/ViewAllUnits";
 import ViewSingleUnit from "./Views/UnitsModule/ViewSingleUnits/ViewSingleUnit";
 
+//import Registration from "./components/signup.component";
+import Home from "./components/Home/Home";
 import ViewAllVulnerableUnits from "./Views/UnitsModule/ViewAllVulnerableUnits/ViewAllVulnerableUnits"
 
 import Registration from "./components/signup.component"
@@ -24,15 +27,21 @@ import AddPlantTip from "./Views/PlantTips/PlantTip/AddPlantTip";
 import UpdatePlantTip from "./Views/PlantTips/PlantTip/UpdatePlantTip";
 import DeletePlantTip from "./Views/PlantTips/PlantTip/DeletePlantTip";
 
+//import TemplateView from "./Template/Template";
+const hist = createBrowserHistory();
 
 export default class Routes extends React.Component {
   render() {
     return (
-      <div>
+      <Router history={hist}>
         <Switch>
-          <Route path="/" exact component={Dashboard} />
+        
+       { /*<Route path="/home" exact component={Home}/> */}
+
+          <Route path="/" exact component={Home} />
           <Route path="/register" exact component={Registration}/>
-          {/* <Route path="/dashboard" exact component={Dashboard} /> */}
+          <Route path="/dashboard" exact component={Dashboard} /> 
+        
           <Route path="/chats/all-chats" exact component={ViewAllChats} />
           <Route path="/chats/single-chat" exact component={ViewSingleMessage} />
           <Route path="/chats/unread-chats" exact component={UnreadChats} />
@@ -55,9 +64,14 @@ export default class Routes extends React.Component {
           <Route path= "/plants/plant-tips/:id/add" exact component={AddPlantTip}/>
           <Route path= "/plants/plant-tips/:id/edit/:tipId" exact  component={UpdatePlantTip}/>
           <Route path= "/plants/plant-tips/:id/remove/:tipId" exact component={DeletePlantTip}/>
+         
+
+          {/*<Redirect from="/" to="/dashboard" />  */}
+
+
           <Route />
         </Switch>
-      </div>
+      </Router>
     );
   }
 }
