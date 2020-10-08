@@ -13,6 +13,8 @@ import { BrowserRouter, Link} from "react-router-dom";
 import TemplateView from "../../Template/Template";
 import Template from '../../Template/Template';
 
+import Button from "@material-ui/core/Button";
+
 
 
 
@@ -251,7 +253,16 @@ export default class Home extends Component{
                 <div>
                 
                 <center>
-                   <h1> GREEN_CORE</h1>
+                
+                   <h1
+                   style={ {
+                    color: "black",
+                    
+                    fontsize: "16px",
+                    fontweight:"bold",
+                    margintop: "0px",
+                    marginbottom: "1px"
+                    }} > GREEN_CORE</h1>
                    <br/>
                    
                    <h2> Sign In</h2>
@@ -262,7 +273,9 @@ export default class Home extends Component{
                    <div>
                      {
                          (signInError) ? (
-                            <p>{signInError}</p>
+                            <p
+                            style ={{ fontcolor: "red" }}
+                            >{signInError}</p>
                              
                          ) :(null)
                      }
@@ -293,14 +306,29 @@ export default class Home extends Component{
                         />
                       <br />
                       <br />
-                      <br/>
                       
-                      <button onClick={this.onSignIn }>Sign In</button><br/><br/>
+                      <Button
+                      variant="contained"
+                      style={{ backgroundColor: "white" }}
+                      // className={classes.button}
+                      onClick={this.onSignIn }
+                    >
+                    <b>
+                      Sign In
+                      </b>
+                    </Button>
+                    <br/>
+                    <br/>
+                      
                      
-                      <button>Forgot Password</button><br/><br/>
+                      <Button
+                      variant="contained"
+                      style={{ backgroundColor: "white" }}> <b>Forgot Password</b></Button><br/><br/>
                 {/*<Link to="/forgotpassword">Get help</Link>*/}
 
-                      <Link to ='/register'><button>Sign Up</button></Link>
+                      <Link to ='/register'><Button
+                      variant="contained"
+                      style={{ backgroundColor: "white" }}> <b>Sign Up </b> </Button></Link>
 
 
                    </div>
