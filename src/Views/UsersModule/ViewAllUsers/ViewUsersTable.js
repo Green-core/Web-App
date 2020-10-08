@@ -28,8 +28,8 @@ export default function ViewUsersTable(props) {
         <TableCell>{props.user[key].name}</TableCell>
         <TableCell>{props.user[key].email}</TableCell>
         <TableCell>{props.user[key].role}</TableCell>
-        <TableCell>{props.user[key].gender}</TableCell>
-        <TableCell>{props.user[key].contact}</TableCell>
+        {/* <TableCell>{props.user[key].gender}</TableCell> */}
+        {/* <TableCell>{props.user[key].contact}</TableCell> */}
         {/* <TableCell>{props.user[key].address}</TableCell> */}
         <TableCell>
         <Link to={`/users/view-single-user/${props.user[key]._id}`}>
@@ -56,8 +56,8 @@ export default function ViewUsersTable(props) {
             <TableCell>Name</TableCell>
             <TableCell>Email</TableCell>
             <TableCell>Role</TableCell>
-            <TableCell>Gender</TableCell>
-            <TableCell>Contact Number</TableCell>
+            {/* <TableCell>Gender</TableCell> */}
+            {/* <TableCell>Contact Number</TableCell> */}
             {/* <TableCell>Address</TableCell> */}
             <TableCell></TableCell>
             

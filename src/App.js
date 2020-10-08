@@ -32,6 +32,7 @@ import ViewAllVulnerableUnits from "./Views/UnitsModule/ViewAllVulnerableUnits/V
 
 import Registration from "./components/signup.component"
 import ViewAllAdmins from "./Views/UsersModule/ViewAllAdmins/ViewAllAdmins";
+import ViewAllGardners from "./Views/UsersModule/ViewAllGardners/ViewAllGardners";
 import ViewSingleAdmin from "./Views/UsersModule/ViewSingleAdmin/ViewSingleAdmin";
 
 import ViewAllPlants from "./Views/PlantTips/ViewPlants/ViewAllPlants";
@@ -39,6 +40,8 @@ import ViewAllPlantTips from "./Views/PlantTips/ViewAllPlantTips/ViewAllPlantTip
 import AddPlantTip from "./Views/PlantTips/PlantTip/AddPlantTip";
 import UpdatePlantTip from "./Views/PlantTips/PlantTip/UpdatePlantTip";
 import DeletePlantTip from "./Views/PlantTips/PlantTip/DeletePlantTip";
+
+import SendMessage from "./Views/ChatModule/SendMessage/SendMessage";
 
 const hist = createBrowserHistory();
 
@@ -81,11 +84,13 @@ function App() {
       <Route path="/chats/single-chat" exact component={ViewSingleMessage} />
       <Route path="/chats/unread-chats" exact component={UnreadChats} />
       <Route path="/chats/view-single-chat/:id"  component={ViewSingleMessage} />
+      <Route path="/chats/send-message" component={SendMessage} />
 
       <Route path="/users/all-users" exact component={ViewAllUsers} />
       <Route path="/users/view-single-user/:id" exact component={ViewSingleUser} />
 
       <Route path="/users/all-admins" exact component={ViewAllAdmins} />
+      <Route path="/users/all-gardners" exact component={ViewAllGardners} />
       <Route path="/users/view-single-admin/:id" exact component={ViewSingleAdmin} />
 
 
