@@ -40,10 +40,12 @@
   /* padding: 1px; */
   grid-area: span;
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   position: absolute;
   left: 0;
   top: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 
   background:url("../pic/gar3.jpg");
   background-size: cover;
@@ -88,6 +90,7 @@
     /* background-color:  rgb(98, 100, 99); */
     opacity: 80%;
     width: 25vw;
+    overflow-y: auto;
 }
 
 /* Style the right2 column */
@@ -102,6 +105,7 @@
   /* background-color: rgb(98, 100, 99); */
   opacity: 80%;
   width: 25vw;
+  overflow-y: auto;
 }
 
 /* Style the footer */
