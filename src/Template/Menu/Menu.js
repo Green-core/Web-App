@@ -46,12 +46,12 @@ export default class Menu extends React.Component {
             icon: "fas fa-car",
             link: "/plants/all-plants",
           },
-          {
-            id: 32,
-            label: "Plant Tips",
-            icon: "fas fa-bullhorn",
-            link: "/plants/plant-tips",
-          },
+          // {
+          //   id: 32,
+          //   label: "Plant Tips",
+          //   icon: "fas fa-bullhorn",
+          //   link: "/plants/plant-tips",
+          // },
        ], 
       },
       {
@@ -92,7 +92,7 @@ export default class Menu extends React.Component {
           },
           {
             id: 52,
-            label: "Unread Messages",
+            label: "New Messages",
             icon: "fas fa-bullhorn",
             link: "/chats/unread-chats",
           },

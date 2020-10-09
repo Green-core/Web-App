@@ -134,7 +134,7 @@ export default class SendMessage extends React.Component {
                 </Select>
               <br></br>
               </FormControl>
-              <FormControl variant="outlined" style={{ minWidth: 700 }}>
+              <FormControl variant="outlined" style={{ minWidth: 900 }}>
               <TextField
                 id="outlined-basic"
                 label="Message"
@@ -148,6 +148,7 @@ export default class SendMessage extends React.Component {
               </FormControl>
               
               <FormControl variant="outlined">
+              
               <Button
                 variant="contained"
                 style={{ backgroundColor: "white" }}
@@ -156,6 +157,7 @@ export default class SendMessage extends React.Component {
                 endIcon={<SendIcon />}
               >
                 Send
+                
               </Button>
               </FormControl>
             </form>

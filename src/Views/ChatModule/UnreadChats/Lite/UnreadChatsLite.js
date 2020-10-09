@@ -35,7 +35,7 @@ export default class UnreadChatsLite extends React.Component {
         const view = this.state.loading ?
             <Loading /> :
             <div style={{ padding: 10 }, {backgroundColor:'grey' }}>
-                <div style={{fontsize:30},{textAlign: 'center'}}>Unread Messages</div>
+                <div style={{fontsize:30},{textAlign: 'center'}}>New Messages</div>
                 <ViewChatsTable chat={this.state.chat} />
             </div>
         
