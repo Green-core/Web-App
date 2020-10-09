@@ -40,7 +40,7 @@ export default class UnreadChats extends React.Component {
     ) : this.state.chats[0] ? (
       <div style={({ padding: 10 }, { backgroundColor: "green" })}>
         <div style={({ fontsize: 30 }, { textAlign: "center" })}>
-          Unread Messages
+          New Messages
         </div>
         <UnreadChatsTable chat={this.state.chats} />
       </div>

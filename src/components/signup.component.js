@@ -135,6 +135,8 @@
 // }
 
 import React, {Component} from 'react';
+import Button from "@material-ui/core/Button";
+
 import axios from 'axios';
 // import "./signup.css";
 import 'whatwg-fetch';
@@ -143,6 +145,7 @@ import{
     setInStorage,
 }from '../utils/storage';
 const crypto = require("crypto");
+
 
 
 export default class Home extends Component{
@@ -381,7 +384,15 @@ export default class Home extends Component{
             return(
                 <div>
                 <center>
-                   <h1> GREEN_CORE</h1><br/>
+                <h1
+                style={ {
+                 color: "black",
+                 
+                 fontsize: "16px",
+                 fontweight:"bold",
+                 margintop: "0px",
+                 marginbottom: "1px"
+                 }} > GREEN_CORE</h1><br/><br/>
                    <h2> SIGN UP</h2>
                    <div>
                    {
@@ -442,7 +453,9 @@ export default class Home extends Component{
 
 
                         /> <br /><br />
-                      <button onClick={this.onSignUp}> Sign Up</button>
+                      <Button
+                      variant="contained"
+                      style={{ backgroundColor: "white" }} onClick={this.onSignUp}><b>Sign Up</b> </Button>
                       
                    
 
