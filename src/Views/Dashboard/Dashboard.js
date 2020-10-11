@@ -36,7 +36,7 @@ export default function Dashboard() {
   const [plantCount, getPlantCount] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/dashboard/get-total-users")
+    fetch("https://gcwabe.herokuapp.com/dashboard/get-total-users")
       .then((results) => results.json())
       .then((data) => {
         console.log(data.result);
@@ -46,7 +46,7 @@ export default function Dashboard() {
   }, []); // <-- Have to pass in [] here!
 
   React.useEffect(() => {
-    fetch("/dashboard/get-total-units")
+    fetch("https://gcwabe.herokuapp.com/dashboard/get-total-units")
       .then((results) => results.json())
       .then((data) => {
         console.log(data.result);
@@ -56,7 +56,7 @@ export default function Dashboard() {
   }, []); // <-- Have to pass in [] here!
 
   React.useEffect(() => {
-    fetch("/dashboard/get-total-vulnerable-units")
+    fetch("https://gcwabe.herokuapp.com/dashboard/get-total-vulnerable-units")
       .then((results) => results.json())
       .then((data) => {
         if (data.status == 200) getVulUnitCount(data.result);
@@ -65,7 +65,7 @@ export default function Dashboard() {
   }, []); // <-- Have to pass in [] here!
 
   React.useEffect(() => {
-    fetch("/dashboard/get-total-unread-chats")
+    fetch("https://gcwabe.herokuapp.com/dashboard/get-total-unread-chats")
       .then((results) => results.json())
       .then((data) => {
         console.log(data.result);
@@ -75,7 +75,7 @@ export default function Dashboard() {
   }, []); // <-- Have to pass in [] here!
 
   React.useEffect(() => {
-    fetch("/dashboard/get-plant-count")
+    fetch("https://gcwabe.herokuapp.com/dashboard/get-plant-count")
       .then((results) => results.json())
       .then((data) => {
         console.log(data.result);

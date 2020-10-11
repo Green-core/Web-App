@@ -59,7 +59,7 @@ export default class Home extends Component{
         if(obj && obj.token) {
             const {token} =obj;
             //Verify token
-            fetch('/verify?token='+token)
+            fetch('https://gcwabe.herokuapp.com/verify?token='+token)
             .then(res => res.json())
             .then(json => {
                 if(json.success){
@@ -132,7 +132,7 @@ export default class Home extends Component{
        });
 
        //Post request to backend
-       fetch('signin/register',{
+       fetch('https://gcwabe.herokuapp.com/signin/register',{
            method:'POST',
            headers:{
             'Content-Type' : 'application/json'
@@ -182,7 +182,7 @@ export default class Home extends Component{
        });
         //Post request to backend
 
-        fetch ('signin/signin' , {
+        fetch ('https://gcwabe.herokuapp.com/signin/signin' , {
             method:'POST',
             headers:{
                 'Content-Type' : 'application/json'
