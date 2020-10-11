@@ -320,10 +320,10 @@ export default class Home extends Component{
                     <br/>
                     <br/>
                       
-                     
+                    <Link to ='/forgot'>
                       <Button
                       variant="contained"
-                      style={{ backgroundColor: "white" }}> <b>Forgot Password</b></Button><br/><br/>
+                      style={{ backgroundColor: "white" }}> <b>Forgot Password</b></Button></Link><br/><br/>
                 {/*<Link to="/forgotpassword">Get help</Link>*/}
 
                       <Link to ='/register'><Button

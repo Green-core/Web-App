@@ -39,6 +39,7 @@ import ViewAllPlantTips from "./Views/PlantTips/ViewAllPlantTips/ViewAllPlantTip
 import AddPlantTip from "./Views/PlantTips/PlantTip/AddPlantTip";
 import UpdatePlantTip from "./Views/PlantTips/PlantTip/UpdatePlantTip";
 import DeletePlantTip from "./Views/PlantTips/PlantTip/DeletePlantTip";
+import Forgot from "./components/forgot.component"
 
 const hist = createBrowserHistory();
 
@@ -77,6 +78,8 @@ function App() {
       <Route path="/" exact component={Home} />
       <Route path="/register" exact component={Registration}/>
       <Route path="/dashboard" exact component={Dashboard} />
+      <Route path="/forgot" exact component={Forgot} />
+
       <Route path="/chats/all-chats" exact component={ViewAllChats} />
       <Route path="/chats/single-chat" exact component={ViewSingleMessage} />
       <Route path="/chats/unread-chats" exact component={UnreadChats} />
