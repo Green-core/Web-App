@@ -158,6 +158,16 @@ export default class Map extends React.Component {
         // loading: false,
       });
     });
+
+    axios.post("/dashboard/district-user-count", data).then((res) => {
+      const districtCount = res.data;
+      console.log("count=");
+      console.log(districtCount);
+      this.setState({
+        userCount: districtCount,
+        // loading: false,
+      });
+    });
   }
 
   handler(e) {

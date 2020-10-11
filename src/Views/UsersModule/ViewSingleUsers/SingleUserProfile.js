@@ -86,12 +86,12 @@ export default function SingleUserProfile(props) {
         </Typography>
       </CardContent>
 
-      <SendMessage 
+      {/* <SendMessage 
           data={{
               userId:  props.singleUser.userId,
               userName: props.singleUser.name
           }}
-      />
+      /> */}
     </Card>
   );
 }

@@ -25,7 +25,7 @@ export default function UnreadChatsTableRow(props) {
     dateDifference = Math.floor(difference / (1000 * 3600));
   } else if (difference > 1000) {
     time = " minutes";
-    dateDifference = Math.floor(difference / 1000);
+    dateDifference = Math.floor(difference / (1000 *60));
   } else {
     time = " seconds";
     dateDifference = Math.floor(difference);

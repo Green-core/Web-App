@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Loading from "../../Loading/Loading";
-import UnreadChatsTable from "./UnreadChatsTable";
+import "./ViewAllGardners.css";
+import ViewAllGardnersTable from "./ViewAllGardnersTable";
 
 import "../../../Template/Template.css";
 import Header from "../../../Template/Header/Header";
@@ -10,24 +11,25 @@ import Footer from "../../../Template/Footer/Footer";
 import Right1 from "../../../Template/Right1/Right1";
 import Right2 from "../../../Template/Right2/Right2";
 
-export default class UnreadChats extends React.Component {
+export default class ViewAllAdmins extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: [],
       loading: false,
-      chats: [],
     };
   }
 
   componentDidMount() {
     this.setState({ loading: true });
-
     axios
-      .get("/chats/get-all-unread")
+      .get("/users/get-all-gardners")
       .then((res) => {
-        const chatData = res.data;
+        const userData = res.data;
+        const state = this.state;
         this.setState({
-          chats: { ...chatData },
+          ...state,
+          user: { ...userData },
           loading: false,
         });
       })
@@ -35,19 +37,15 @@ export default class UnreadChats extends React.Component {
   }
 
   render() {
+    console.log(this.state.loading);
     const view = this.state.loading ? (
       <Loading />
-    ) : this.state.chats[0] ? (
-      <div style={({ padding: 10 }, { backgroundColor: "green" })}>
-        <div style={({ fontsize: 30 }, { textAlign: "center" })}>
-          New Messages
-        </div>
-        <UnreadChatsTable chat={this.state.chats} />
-      </div>
     ) : (
-      <h1>No Chats</h1>
+      <div style={({ padding: 10 }, { backgroundColor: "green" })}>
+        <div style={({ fontsize: 30 }, { textAlign: "center" })}>All Gardeners</div>
+        <ViewAllGardnersTable user={this.state.user} />
+      </div>
     );
-
     return (
       <div className="grid-container">
         <div className="header">

@@ -41,8 +41,8 @@ export default class ViewAllAdmins extends React.Component {
     const view = this.state.loading ? (
       <Loading />
     ) : (
-      <div style={{ padding: 10 }}>
-        All Admins
+      <div style={({ padding: 10 }, { backgroundColor: "green" })}>
+        <div style={({ fontsize: 30 }, { textAlign: "center" })}>All Admins</div>
         <ViewAllAdminsTable user={this.state.user} />
       </div>
     );
